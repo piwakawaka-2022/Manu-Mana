@@ -6,11 +6,12 @@ import Nav from './Nav'
 import Login from './Login'
 import Register from './Register'
 import Home from './Home'
+import BirdList from './BirdList'
 
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
-  
+
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
@@ -27,6 +28,7 @@ function App () {
           {!auth.isAuthenticated && (
             <>
               <Route path="/login" element={<Login />} />
+              <Route path="/birdlist" element={<BirdList />} />
               <Route path="/register" element={<Register />} />
             </>
           )}
