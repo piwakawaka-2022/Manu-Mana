@@ -1,14 +1,9 @@
-
 import React from 'react'
 
-
-
-function Home() {
- 
-
+function Home () {
   return (
-    <p>Home</p>
-   
+    <p>Here is a map of recent bird sightings in Poneke!</p>
+    /*  Map Component to go here!  */
   )
 }
 
