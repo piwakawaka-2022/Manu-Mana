@@ -9,10 +9,6 @@ function Bird () {
 
   const { id } = useParams()
 
-  useEffect(() => {
-    dispatch(getBirdsThunk())
-  }, [])
-
   const birdData = birds.filter(bird => bird.id === Number(id))
   console.log(birdData[0])
 
