@@ -8,13 +8,12 @@ function getAllBirds(db = conn) {
 
 // NEED TO COMPLETE FRIDAY
 
-// function getAllBirdsUsers(db = conn) {
-//   return db('users_birds')
-//     .join('user_id', 'users.id')
-//     .select('users.id as user_id')
-//     .join('bird_id', 'birds.id')
-//     .select('birds.id as bird_id')
-// }
+function getAllBirdsUsers(db = conn) {
+  return db('birds')
+    .join('users_birds', 'birds.id', 'users_birds.bird_id')
+    .join('users', 'users_birds.user_id', 'users.id')
+    .select('*', 'users.id as user_id', 'birds.id as bird_id')
+}
 
 function dbMarkers(db = conn) {
   return db('markers').select()
@@ -37,5 +36,5 @@ module.exports = {
   addBird,
   dbMarkers,
   dbAddMarker,
-  // getAllBirdsUsers,
+  getAllBirdsUsers,
 }

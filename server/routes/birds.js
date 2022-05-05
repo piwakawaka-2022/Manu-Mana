@@ -18,15 +18,15 @@ router.get('/', (req, res) => {
 
 // GET all birds sightings API/V1/  NEED TO COMPLETE FRIDAY
 
-// router.get('/birdlist', (req, res) => {
-//   db.getAllBirdsUsers()
-//     .then((birds) => {
-//       res.json(birds)
-//     })
-//     .catch((err) => {
-//       res.status(500).json({ message: err.message })
-//     })
-// })
+router.get('/birdlist', (req, res) => {
+  db.getAllBirdsUsers()
+    .then((birds) => {
+      res.json(birds)
+    })
+    .catch((err) => {
+      res.status(500).json({ message: err.message })
+    })
+})
 
 // POST API/V1/
 
