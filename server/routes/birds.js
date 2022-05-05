@@ -16,9 +16,9 @@ router.get('/', (req, res) => {
     })
 })
 
-// GET all birds sightings API/V1/birds/birdlist
+// GET all birds sightings in a list API/V1/birds/birdlist
 
-router.get('/birdlist', (req, res) => {
+router.get('/birdsightings', (req, res) => {
   db.getAllBirdsUsers()
     .then((birds) => {
       res.json(birds)
