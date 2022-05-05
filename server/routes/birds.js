@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 // GET all birds sightings API/V1/  NEED TO COMPLETE FRIDAY
 
-// router.get('/', (req, res) => {
+// router.get('/birdlist', (req, res) => {
 //   db.getAllBirdsUsers()
 //     .then((birds) => {
 //       res.json(birds)

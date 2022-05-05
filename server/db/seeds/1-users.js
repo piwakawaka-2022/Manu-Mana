@@ -3,9 +3,10 @@ const { generateHash } = require('authenticare/server')
 
 const replacePasswordWithHash = (user) => {
   // eslint-disable-next-line camelcase
-  const { username, email_address, contact_details } = user
+  const { id, username, email_address, contact_details } = user
   return generateHash(user.password).then((hash) => {
     return {
+      id,
       username,
       email_address,
       contact_details,
@@ -45,12 +46,10 @@ const fakeUserData = [
   },
 ]
 
-const getFakeUsersPromise = () =>
-  Promise.all(fakeUserData.map(replacePasswordWithHash))
-
-exports.seed = (knex) => {
+exports.seed = function (knex) {
   return knex('users')
     .del()
-    .then(() => getFakeUsersPromise())
-    .then((fakeUsers) => knex('users').insert(fakeUsers))
+    .then(() => fakeUserData.map(replacePasswordWithHash))
+    .then((fakeUserPromises) => Promise.all(fakeUserPromises))
+    .then((users) => knex('users').insert(users))
 }
