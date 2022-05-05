@@ -7,6 +7,8 @@ import Login from './Login'
 import Register from './Register'
 import Home from './Home'
 import GlobalBirdList from './GlobalBirdList'
+import Bird from './Bird'
+import UserPage from './UserPage'
 
 function App () {
   const dispatch = useDispatch()
@@ -25,11 +27,16 @@ function App () {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/birdlist" element={<GlobalBirdList />} />
-          <Route path='/birds/:id'/>
+          <Route path='/birds/:id'element={<Bird />} />
           {!auth.isAuthenticated && (
             <>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+            </>
+          )}
+          {auth.isAuthenticated && (
+            <>
+              <Route path="/user/:id" element={<UserPage />}/>
             </>
           )}
         </Routes>
