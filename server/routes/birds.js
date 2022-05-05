@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     })
 })
 
-// GET all birds sightings API/V1/  NEED TO COMPLETE FRIDAY
+// GET all birds sightings API/V1/birds/birdlist
 
 router.get('/birdlist', (req, res) => {
   db.getAllBirdsUsers()
@@ -28,7 +28,19 @@ router.get('/birdlist', (req, res) => {
     })
 })
 
-// POST API/V1/
+// GET API/V1/user/:id
+
+router.get('/user/:id', (req, res) => {
+  db.getUserBirds(Number(req.params.id))
+    .then((birds) => {
+      res.json(birds)
+    })
+    .catch((err) => {
+      res.status(500).json({ message: err.message })
+    })
+})
+
+// POST API/V1/user/:id
 
 router.post('/user/:id', (req, res) => {
   const newBirdSighting = req.body
