@@ -5,7 +5,7 @@ const server = express()
 const birdsRoute = require('./routes/birds')
 const markersRoute = require('./routes/markers.js')
 
-server.use('api/v1/birds/birdlist', birdsRoute)
+server.use('api/v1/birds/birdsightings', birdsRoute)
 server.use('api/v1/markers', markersRoute)
 server.use('/api/v1/birds', birdsRoute)
 server.use('/api/v1', authRoutes)
