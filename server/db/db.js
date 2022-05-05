@@ -3,7 +3,7 @@
 const conn = require('./connection')
 
 function getAllBirds(db = conn) {
-  return db('birds')
+  return db('birds').select()
 }
 
 // NEED TO COMPLETE FRIDAY

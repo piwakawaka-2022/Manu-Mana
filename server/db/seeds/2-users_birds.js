@@ -26,7 +26,7 @@ exports.seed = function (knex) {
         },
         {
           id: 3,
-          user_id: 1,
+          user_id: 2,
           bird_id: 2,
           timestamps: true,
           location: 'Newtown',
