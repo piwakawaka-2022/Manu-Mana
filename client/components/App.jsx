@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { checkAuth } from '../actions/auth'
+import { fetchMarkers } from '../actions/markers'
 import Nav from './Nav'
 import Login from './Login'
 import Register from './Register'
@@ -10,12 +11,15 @@ import GlobalBirdList from './GlobalBirdList'
 import Bird from './Bird'
 import UserPage from './UserPage'
 
+
+
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
+    dispatch(fetchMarkers())
   }, [])
 
   return (

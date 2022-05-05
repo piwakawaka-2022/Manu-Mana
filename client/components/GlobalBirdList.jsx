@@ -10,7 +10,7 @@ import GlobalBird from './GlobalBird'
 // Can probably use same action/thunk for this page and UserPage as it is returning the same information
 function GlobalBirdList () {
   const birds = useSelector(globalState => globalState.birds)
-
+  console.log(birds)
   return (
     <>
       <Link to="/">Home</Link>

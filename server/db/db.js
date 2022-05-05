@@ -17,14 +17,14 @@ function getAllBirds(db = conn) {
 // }
 
 function dbMarkers(db = conn) {
-  return db('markers')
+  return db('markers').select()
 }
 
 function dbAddMarker(markerObj, db = conn) {
   return db('markers').insert({
-    name: markerObj.name,
-    lat: markerObj.coords.lat,
-    lng: markerObj.coords.lng,
+    // name: markerObj.name,
+    // lat: markerObj.coords.lat,
+    // lng: markerObj.coords.lng,
   })
 }
 

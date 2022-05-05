@@ -8,4 +8,5 @@ exports.seed = (knex) => {
   return empty('users')
     .then(() => empty('users_birds'))
     .then(() => empty('birds'))
+    .then(() => empty('markers'))
 }
