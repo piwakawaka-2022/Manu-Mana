@@ -13,7 +13,6 @@ import UserPage from './UserPage'
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
-
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
