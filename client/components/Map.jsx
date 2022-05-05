@@ -78,3 +78,6 @@ function Map () {
 }
 
 export default Map
+// Set up redux
+// Set up database
+// Change centering
