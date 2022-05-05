@@ -5,7 +5,7 @@ import Select from 'react-select'
 function Map () {
   const [id, setId] = useState(0)
   const [markers, setMarkers] = useState([])
-  const [bird, setBird] = useState('undefined species')
+  const [bird, setBird] = useState('Undefined manu')
   const mapRef = useRef()
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyDnGHfALAyWDscmt2LcSwTTrG6SMHpUFsU',
@@ -13,7 +13,8 @@ function Map () {
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
 
-  const center = useMemo(() => ({ lat: -41.298493517295654, lng: 174.79978666984925 }))
+  const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
+
   const options = useMemo(() => ({
     mapId: '724b7195aa686651',
     disableDefaultUI: true,
@@ -78,3 +79,6 @@ function Map () {
 }
 
 export default Map
+// Set up redux
+// Set up database
+// Change centering

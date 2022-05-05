@@ -16,6 +16,18 @@ function getAllBirds(db = conn) {
 //     .select('birds.id as bird_id')
 // }
 
+function dbMarkers(db = conn) {
+  return db('markers')
+}
+
+function dbAddMarker(markerObj, db = conn) {
+  return db('markers').insert({
+    name: markerObj.name,
+    lat: markerObj.coords.lat,
+    lng: markerObj.coords.lng,
+  })
+}
+
 function addBird(newBirdSighting, db = conn) {
   return db('users_birds').insert(newBirdSighting)
 }
@@ -23,5 +35,7 @@ function addBird(newBirdSighting, db = conn) {
 module.exports = {
   getAllBirds,
   addBird,
+  dbMarkers,
+  dbAddMarker,
   // getAllBirdsUsers,
 }
