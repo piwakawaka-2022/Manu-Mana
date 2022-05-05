@@ -2,20 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import Bird from './Bird'
+import GlobalBird from './GlobalBird'
 
-function BirdList () {
+function GlobalBirdList () {
   const birds = useSelector(globalState => globalState.birds)
 
   return (
     <>
       <Link to="/">Home</Link>
-      <p>Bird List</p>
       <div>
-        {birds.map((oneBird) => <Bird key={oneBird?.id} bird={oneBird} />)}
+        {birds.map((oneBird) => <GlobalBird key={oneBird?.id} bird={oneBird} />)}
       </div>
     </>
   )
 }
 
-export default BirdList
+export default GlobalBirdList

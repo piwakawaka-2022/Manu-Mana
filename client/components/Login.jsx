@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { loginUser, loginError } from '../actions/auth'
 
-function Login() {
+function Login () {
   const navigateTo = useNavigate()
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
 
   const [formData, setFormData] = useState({
     username: '',
-    password: '',
+    password: ''
   })
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function Login() {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       }
     })
   }
@@ -35,7 +35,7 @@ function Login() {
   return (
     <form className="form box" onSubmit={handleSubmit}>
       <section className="section has-background-white">
-      <h1 className="title is-2">Login</h1>
+        <h1 className="title is-2">Login</h1>
       </section>
       <hr />
       {auth.errorMessage && (
@@ -51,7 +51,7 @@ function Login() {
           autoComplete="username"
           onChange={handleChange}
           value={formData.username}
-          
+
         />
       </label>
       <label className="label is-large has-text-centered">
