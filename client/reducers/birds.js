@@ -1,6 +1,7 @@
 const initialState = [
   {
     id: 1,
+    user_id: 1,
     name: 'New Zealand Pigeon',
     maori_name: 'Kererū',
     size: '51cm',
@@ -13,6 +14,7 @@ const initialState = [
   },
   {
     id: 2,
+    user_id: 1,
     name: 'Bellbird',
     maori_name: 'Korimako',
     size: '20cm',
@@ -25,6 +27,7 @@ const initialState = [
   },
   {
     id: 3,
+    user_id: 2,
     name: 'Red-Crowned Parakeet',
     maori_name: 'Kākāriki',
     size: '28cm',
