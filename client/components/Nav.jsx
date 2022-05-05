@@ -17,8 +17,7 @@ function Nav () {
     <nav>
       <div className="navbar">
 
-        <Link to='/' className=''> Lost </Link>
-        <Link to='/' className=''> Found </Link>
+        <Link to='/birdlist' className=''> See A list of recent sightings </Link>
       </div>
       <div className="navbar-auth">
         {auth.isAuthenticated ? (

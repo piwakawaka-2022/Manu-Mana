@@ -1,6 +1,8 @@
+/* eslint-disable comma-dangle */
 const { generateHash } = require('authenticare/server')
 
 const replacePasswordWithHash = (user) => {
+  // eslint-disable-next-line camelcase
   const { username, email_address, contact_details } = user
   return generateHash(user.password).then((hash) => {
     return {

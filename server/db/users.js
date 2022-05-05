@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable space-before-function-paren */
 const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
