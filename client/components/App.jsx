@@ -10,7 +10,6 @@ import Home from './Home'
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
-  
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))

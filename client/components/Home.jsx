@@ -1,14 +1,12 @@
-
 import React from 'react'
+import Map from './Map'
 
-
-
-function Home() {
- 
-
+function Home () {
   return (
-    <p>Home</p>
-   
+    <>
+      <p>Home</p>
+      <Map />
+    </>
   )
 }
 
