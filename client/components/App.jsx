@@ -9,6 +9,7 @@ import Home from './Home'
 import GlobalBirdList from './GlobalBirdList'
 import Bird from './Bird'
 import UserPage from './UserPage'
+import { getBirdsThunk } from '../actions/birds'
 
 function App () {
   const dispatch = useDispatch()
@@ -16,8 +17,10 @@ function App () {
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
+    dispatch(getBirdsThunk())
   }, [])
 
+  
   return (
     <>
       <div>
