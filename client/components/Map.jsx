@@ -5,12 +5,9 @@ import { useSelector } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
 import { useDispatch } from 'react-redux'
 
-
 function Map () {
   const dispatch = useDispatch()
   const dbMarkers = useSelector(state => state.markers)
-  const [id, setId] = useState(0)
-  const [markers, setMarkers] = useState([])
   const [bird, setBird] = useState('Undefined manu')
   const mapRef = useRef()
   const { isLoaded } = useLoadScript({
@@ -38,9 +35,10 @@ function Map () {
     { value: 'NZ Kingfisher', label: 'NZ Kingfisher' },
     { value: 'Tūī', label: 'Tūī' },
     { value: 'Kea', label: 'Kea' },
-    { value: 'Pīwakawaka', label: 'Pīwakawaka' },
-    { value: 'Kōkako', label: 'Kōkako' },
-    { value: 'Bellbird', label: 'Bellbird' },
+    { value: 'Karearea', label: 'Karearea' },
+    { value: 'Yellowhead', label: 'Yellowhead' },
+    { value: 'Kākāriki', label: 'Kākāriki' },
+    { value: 'Pūtangitangi', label: 'Pūtangitangi' },
   ]
 
   function handleChange (evt) {
@@ -51,22 +49,20 @@ function Map () {
     dispatch(fetchMarkers())
   }, [])
   
-  
   const addMarker = (coords) => {
-    setId((id) => id + 1)
     const name = bird
-    setMarkers((markers) => markers.concat([{ coords, id, name }]))
-    console.log(markers)
-    if (markers.length !== 0){
-      dispatch(saveMarkersThunk(markers.slice(-1)))
+    let markers = {
+      name: name,
+      coords: coords,
     }
-    
+    console.log(markers)
+    dispatch(saveMarkersThunk(markers))
   }
 
   if (!isLoaded) return <div>Loading..</div>
 
   return (
-    <div className='map-select-container'>
+    <>
       <div className='select-container'>
         <Select onChange={handleChange} options = {birdOptions} />
       </div>
@@ -92,18 +88,14 @@ function Map () {
             })
           ) : null }
         </GoogleMap>
-
-        {/* Turn Below button into a global Clear map every 7days */}
-        <button
-          type="button"
-          onClick={() => setMarkers([])}
-        >CLEAR MAP</button>
+       <div className='bird-paragraph'>
+         <p> You have seen a {bird} in Poneke!</p>
+       </div>
       </div>
-    </div>
+    </>
   )
 }
 
 export default Map
-// Set up redux
-// Set up database
+
 // Change centering

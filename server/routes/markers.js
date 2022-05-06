@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const markerArr = req.body
-  const markerObj = markerArr[0]
+  const markerObj = req.body
   db.dbAddMarker(markerObj).then((markerId) => {
     db.getMarker(markerId)
       .then((markers) => {
