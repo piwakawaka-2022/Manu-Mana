@@ -30,10 +30,6 @@ export function saveMarkersThunk(marker) {
       .catch((err) => {
         console.log(err.message)
       })
-      .then((marker) => dispatch(fetchMarkers(marker)))
-      .catch((err) => {
-        console.log(err.message)
-      })
   }
 }
 
