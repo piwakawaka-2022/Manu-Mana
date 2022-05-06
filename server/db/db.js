@@ -26,8 +26,11 @@ function addBird(newBirdSighting, db = conn) {
   return db('users_birds').insert(newBirdSighting)
 }
 
+var date = new Date()
+date.setDate(date.getDate() - 7)
+
 function dbMarkers(db = conn) {
-  return db('markers').select()
+  return db('markers').select().where('created_at', '>=', date)
 }
 
 function getMarker(id, db = conn) {

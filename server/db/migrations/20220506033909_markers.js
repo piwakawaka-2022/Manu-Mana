@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.string('name')
     table.decimal('lat', 30, 15)
     table.decimal('lng', 30, 15)
+    table.timestamps(true, true)
   })
 }
 
