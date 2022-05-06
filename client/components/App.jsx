@@ -9,6 +9,8 @@ import Home from './Home'
 import GlobalBirdList from './GlobalBirdList'
 import Bird from './Bird'
 import UserPage from './UserPage'
+import { getBirdsThunk } from '../actions/birds'
+import BirdSightingsList from './BirdSightingList'
 
 
 
@@ -18,6 +20,7 @@ function App () {
   useEffect(() => {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
+    dispatch(getBirdsThunk())
   }, [])
 
   return (
@@ -28,7 +31,8 @@ function App () {
       <div className="colomn">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/birdlist" element={<GlobalBirdList />} />
+          <Route path="/birdlist" element={<BirdSightingsList />} />
+          <Route path='/bird-database' element={<GlobalBirdList />} />
           <Route path='/birds/:id'element={<Bird />} />
           {!auth.isAuthenticated && (
             <>
