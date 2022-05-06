@@ -3,7 +3,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function BirdSightings (props) {
-  const { name, maori_name, date, location, id } = props.bird
+  const { name, maori_name, location, id, timestamps } = props.bird
+
+  const date = new Date(timestamps).toDateString()
+  const time = new Date(timestamps).toLocaleTimeString()
 
   return (
     <>
@@ -12,7 +15,7 @@ function BirdSightings (props) {
           <h2>{maori_name}</h2>
         </Link>
         <h3>{name}</h3>
-        <p>Date: {date}</p>
+        <p>Date: {date} {time}</p>
         <p>Location: {location}</p>
       </div>
     </>
