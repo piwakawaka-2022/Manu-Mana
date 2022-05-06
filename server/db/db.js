@@ -13,15 +13,14 @@ function getAllBirdsUsers(db = conn) {
     .select('*', 'users.id as user_id', 'birds.id as bird_id')
 }
 
-function getUserBirds(id, db = conn) {
+function getUserBirds(db = conn) {
   return db('birds')
     .join('users_birds', 'birds.id', 'users_birds.bird_id')
     .join('users', 'users_birds.user_id', 'users.id')
     .select('*', 'users.id as user_id', 'birds.id as bird_id')
-    .where({
-      user_id: id,
-    })
 }
+
+///db function that we are using to make form work. 
 
 function addBird(newBirdSighting, db = conn) {
   return db('users_birds').insert(newBirdSighting)

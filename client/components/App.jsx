@@ -11,6 +11,7 @@ import Bird from './Bird'
 import UserPage from './UserPage'
 import { getBirdsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
+import AddBirdSighting from './AddBirdSighting'
 
 
 

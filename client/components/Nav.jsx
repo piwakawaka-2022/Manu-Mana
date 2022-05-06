@@ -16,8 +16,9 @@ function Nav () {
   return (
     <nav>
       <div className="navbar">
-
-        <Link to='/birdlist' className=''> See A list of recent sightings </Link>
+        <Link to='/birdlist' className=''> List Of Recent Bird Sightings </Link>
+        <Link to='/bird-database'> Birds You're Likely To See Around Poneke </Link>
+        <Link to="/">Home</Link>
       </div>
       <div className="navbar-auth">
         {auth.isAuthenticated ? (
@@ -25,6 +26,7 @@ function Nav () {
             <Link to="/" className="navbar-item is-large" onClick={logout}>
                 Logout
             </Link>
+            <Link to={`/user/${auth.user.id}`}> Your Bird Sightings </Link>
           </>
         ) : (
           <>
