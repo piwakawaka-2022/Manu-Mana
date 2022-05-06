@@ -20,6 +20,8 @@ function getUserBirds(db = conn) {
     .select('*', 'users.id as user_id', 'birds.id as bird_id')
 }
 
+///db function that we are using to make form work. 
+
 function addBird(newBirdSighting, db = conn) {
   return db('users_birds').insert(newBirdSighting)
 }

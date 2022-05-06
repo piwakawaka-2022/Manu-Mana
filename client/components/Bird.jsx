@@ -11,7 +11,7 @@ function Bird () {
 
   return (
     <>
-      <div> <button type="button">Add to sightings </button> </div>
+      <div> <AddBirdSighting bird={birdData} /> </div>
       <div>
         <img src={birdData[0]?.photo} height='300px'/>
         <h1> {birdData[0]?.maori_name} </h1>

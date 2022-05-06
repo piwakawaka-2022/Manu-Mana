@@ -6,7 +6,10 @@ export function getBirds() {
 
 export function getUserSightings() {
   return request.get('/api/v1/birds/birdsightings').then((res) => {
-    console.log(res.body)
     return res.body
   })
+}
+
+export function addBirdSighting() {
+  return request.post('/api/v1/birds')
 }
