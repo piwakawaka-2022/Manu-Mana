@@ -4,6 +4,8 @@ const authRoutes = require('./routes/auth')
 const server = express()
 const birdsRoute = require('./routes/birds')
 const markersRoute = require('./routes/markers.js')
+server.use(express.json())
+server.use(express.static(path.join(__dirname, 'public')))
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))

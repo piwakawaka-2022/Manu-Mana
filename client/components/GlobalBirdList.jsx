@@ -5,7 +5,7 @@ import GlobalBird from './GlobalBird'
 
 function GlobalBirdList () {
   const birds = useSelector(globalState => globalState.birds)
-
+  console.log(birds)
   return (
     <>
       <h1>Birds you're likely to see in Poneke!</h1>

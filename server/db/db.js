@@ -25,7 +25,11 @@ function addBird(newBirdSighting, db = conn) {
 }
 
 function dbMarkers(db = conn) {
-  return db('markers')
+  return db('markers').select()
+}
+
+function getMarker(id, db = conn) {
+  return db('markers').where('id', id).first()
 }
 
 function dbAddMarker(markerObj, db = conn) {
@@ -41,6 +45,7 @@ module.exports = {
   addBird,
   dbMarkers,
   dbAddMarker,
+  getMarker,
   getAllBirdsUsers,
   getUserBirds,
 }
