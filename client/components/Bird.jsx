@@ -1,16 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getBirdsThunk } from '../actions/birds'
+import { useSelector } from 'react-redux'
 
 function Bird () {
   const birds = useSelector(globalState => globalState.birds)
-  const dispatch = useDispatch()
 
   const { id } = useParams()
 
   const birdData = birds.filter(bird => bird.id === Number(id))
-  console.log(birdData[0])
 
   return (
     <>
