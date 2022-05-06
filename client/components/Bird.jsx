@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBirdsThunk } from '../actions/birds'
+import AddBirdSighting from './AddBirdSighting'
 
 function Bird () {
   const birds = useSelector(globalState => globalState.birds)
@@ -14,7 +15,7 @@ function Bird () {
 
   return (
     <>
-      <div> <button type="button">Add to sightings </button> </div>
+      <div> <AddBirdSighting bird={birdData} /> </div>
       <div>
         <img src={birdData[0]?.photo} height='300px'/>
         <h1> {birdData[0]?.maori_name} </h1>

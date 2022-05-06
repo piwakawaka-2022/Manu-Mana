@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
-function AddBirdSighting () {
+function AddBirdSighting (props) {
   const [location, setLocation] = useState('')
+
+  console.log(props)
 
   const handleType = (e) => {
     setLocation(e.target.value)
