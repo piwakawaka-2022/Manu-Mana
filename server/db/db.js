@@ -23,6 +23,8 @@ function getUserBirds(id, db = conn) {
     })
 }
 
+///db function that we are using to make form work. 
+
 function addBird(newBirdSighting, db = conn) {
   return db('users_birds').insert(newBirdSighting)
 }
