@@ -6,7 +6,6 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   db.dbMarkers()
     .then((markers) => {
-      console.log(markers)
       res.json(markers)
       return null
     })
@@ -16,16 +15,18 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const markerObj = req.body
-
-  db.dbAddLost(markerObj)
-    .then((marker) => {
-      res.json(marker)
-      return null
-    })
-    .catch((err) => {
-      res.status(500).send(err.message)
-    })
+  const markerArr = req.body
+  const markerObj = markerArr[0]
+  db.dbAddMarker(markerObj).then((markerId) => {
+    db.getMarker(markerId)
+      .then((markers) => {
+        res.json(markers)
+        return null
+      })
+      .catch((err) => {
+        res.status(500).send(err.message)
+      })
+  })
 })
 
 module.exports = router

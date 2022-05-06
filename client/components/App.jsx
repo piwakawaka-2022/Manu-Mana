@@ -12,6 +12,8 @@ import UserPage from './UserPage'
 import { getBirdsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
 
+
+
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)

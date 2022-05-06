@@ -4,7 +4,7 @@ const router = express.Router()
 
 const db = require('../db/db')
 
-// GET all birds API/V1/
+// GET all birds API/V1/birds
 
 router.get('/', (req, res) => {
   db.getAllBirds()

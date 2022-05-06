@@ -6,7 +6,7 @@ import GlobalBird from './GlobalBird'
 
 function GlobalBirdList () {
   const birds = useSelector(globalState => globalState.birds)
-
+  console.log(birds)
   return (
     <>
       <Link to="/">Home</Link>
