@@ -13,14 +13,11 @@ function getAllBirdsUsers(db = conn) {
     .select('*', 'users.id as user_id', 'birds.id as bird_id')
 }
 
-function getUserBirds(id, db = conn) {
+function getUserBirds(db = conn) {
   return db('birds')
     .join('users_birds', 'birds.id', 'users_birds.bird_id')
     .join('users', 'users_birds.user_id', 'users.id')
     .select('*', 'users.id as user_id', 'birds.id as bird_id')
-    .where({
-      user_id: id,
-    })
 }
 
 ///db function that we are using to make form work. 
@@ -30,7 +27,11 @@ function addBird(newBirdSighting, db = conn) {
 }
 
 function dbMarkers(db = conn) {
-  return db('markers')
+  return db('markers').select()
+}
+
+function getMarker(id, db = conn) {
+  return db('markers').where('id', id).first()
 }
 
 function dbAddMarker(markerObj, db = conn) {
@@ -46,6 +47,7 @@ module.exports = {
   addBird,
   dbMarkers,
   dbAddMarker,
+  getMarker,
   getAllBirdsUsers,
   getUserBirds,
 }

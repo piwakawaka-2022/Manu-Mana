@@ -13,6 +13,8 @@ import { getBirdsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
 import AddBirdSighting from './AddBirdSighting'
 
+
+
 function App () {
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)

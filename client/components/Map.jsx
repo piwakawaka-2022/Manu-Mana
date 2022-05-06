@@ -1,8 +1,14 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
+import { useSelector } from 'react-redux'
+import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
+import { useDispatch } from 'react-redux'
+
 
 function Map () {
+  const dispatch = useDispatch()
+  const dbMarkers = useSelector(state => state.markers)
   const [id, setId] = useState(0)
   const [markers, setMarkers] = useState([])
   const [bird, setBird] = useState('Undefined manu')
@@ -12,7 +18,8 @@ function Map () {
     libraries: ['places']
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-
+  // console.log(dbMarkers)
+ 
   const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
 
   const options = useMemo(() => ({
@@ -24,18 +31,36 @@ function Map () {
   const birdOptions = [
     { value: 'Kaka', label: 'Kaka' },
     { value: 'Piwakawaka', label: 'Piwakawaka' },
-    { value: 'Kererū', label: 'Kererū' }
+    { value: 'Kererū', label: 'Kererū' },
+    { value: 'Ruru', label: 'Ruru' },
+    { value: 'Kōkako', label: 'Kōkako' },
+    { value: 'Bellbird', label: 'Bellbird' },
+    { value: 'NZ Kingfisher', label: 'NZ Kingfisher' },
+    { value: 'Tūī', label: 'Tūī' },
+    { value: 'Kea', label: 'Kea' },
+    { value: 'Pīwakawaka', label: 'Pīwakawaka' },
+    { value: 'Kōkako', label: 'Kōkako' },
+    { value: 'Bellbird', label: 'Bellbird' },
   ]
 
   function handleChange (evt) {
     setBird(evt.value)
   }
-
+  
+  useEffect(() => {
+    dispatch(fetchMarkers())
+  }, [])
+  
+  
   const addMarker = (coords) => {
     setId((id) => id + 1)
     const name = bird
     setMarkers((markers) => markers.concat([{ coords, id, name }]))
     console.log(markers)
+    if (markers.length !== 0){
+      dispatch(saveMarkersThunk(markers.slice(-1)))
+    }
+    
   }
 
   if (!isLoaded) return <div>Loading..</div>
@@ -52,16 +77,16 @@ function Map () {
           options={options}
           onLoad={onLoad}
           onClick={(e) => addMarker(e.latLng.toJSON())}>
-          {markers ? (
-            markers.map((marker) => {
+          {dbMarkers ? (
+            dbMarkers.map((marker) => {
               return (
                 <Marker
                   key={marker.id}
                   draggable={true}
-                  position={marker.coords}
+                  position={{lat: marker.lat, lng: marker.lng}}
                   onDragEnd={e => marker.coords = e.latLng.toJSON()}
                   icon="birds/birds/bird.png"
-                  label={{ text: marker.name, color: '#FFF01F' }}
+                  label={{ text: marker.name, color: '#FFFFFF' }}
                 />
               )
             })
