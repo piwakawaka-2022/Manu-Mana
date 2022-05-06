@@ -15,16 +15,18 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const markerObj = req.body
-  console.log(markerObj)
-  db.dbAddMarker(markerObj)
-    .then((marker) => {
-      res.json(marker)
-      return null
-    })
-    .catch((err) => {
-      res.status(500).send(err.message)
-    })
+  const markerArr = req.body
+  const markerObj = markerArr[0]
+  db.dbAddMarker(markerObj).then((markerId) => {
+    db.getMarker(markerId)
+      .then((markers) => {
+        res.json(markers)
+        return null
+      })
+      .catch((err) => {
+        res.status(500).send(err.message)
+      })
+  })
 })
 
 module.exports = router

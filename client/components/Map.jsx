@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo, useRef, useState,} from 'react'
+import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
 import { useSelector } from 'react-redux'
-import { saveMarkersThunk } from '../actions/markers'
+import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
 import { useDispatch } from 'react-redux'
 
 
@@ -11,7 +11,6 @@ function Map () {
   const dbMarkers = useSelector(state => state.markers)
   const [id, setId] = useState(0)
   const [markers, setMarkers] = useState([])
-  const [globalMarkers, setglobalMarkers] = useState([])
   const [bird, setBird] = useState('Undefined manu')
   const mapRef = useRef()
   const { isLoaded } = useLoadScript({
@@ -48,13 +47,20 @@ function Map () {
     setBird(evt.value)
   }
   
+  useEffect(() => {
+    dispatch(fetchMarkers())
+  }, markers)
+  
   
   const addMarker = (coords) => {
     setId((id) => id + 1)
     const name = bird
     setMarkers((markers) => markers.concat([{ coords, id, name }]))
     console.log(markers)
-    dispatch(saveMarkersThunk(markers))
+    if (markers.length !== 0){
+      dispatch(saveMarkersThunk(markers.slice(-1)))
+    }
+    
   }
 
   if (!isLoaded) return <div>Loading..</div>

@@ -19,11 +19,15 @@ function dbMarkers(db = conn) {
   return db('markers').select()
 }
 
+function getMarker(id, db = conn) {
+  return db('markers').where('id', id).first()
+}
+
 function dbAddMarker(markerObj, db = conn) {
   return db('markers').insert({
-    // name: markerObj.name,
-    // lat: markerObj.coords.lat,
-    // lng: markerObj.coords.lng,
+    name: markerObj.name,
+    lat: markerObj.coords.lat,
+    lng: markerObj.coords.lng,
   })
 }
 
@@ -36,5 +40,6 @@ module.exports = {
   addBird,
   dbMarkers,
   dbAddMarker,
+  getMarker,
   getAllBirdsUsers,
 }
