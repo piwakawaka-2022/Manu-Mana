@@ -2,8 +2,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function GlobalBird (props) {
-  const { name, maori_name, photo, id } = props.bird
+function BirdSightings (props) {
+  const { name, maori_name, date, location, id } = props.bird
 
   return (
     <>
@@ -12,10 +12,11 @@ function GlobalBird (props) {
           <h2>{maori_name}</h2>
         </Link>
         <h3>{name}</h3>
-        <img src={photo} height='100px' />
+        <p>Date: {date}</p>
+        <p>Location: {location}</p>
       </div>
     </>
   )
 }
 
-export default GlobalBird
+export default BirdSightings
