@@ -1,9 +1,8 @@
 import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
-import { useDispatch } from 'react-redux'
 
 function Map () {
   const dispatch = useDispatch()
@@ -16,7 +15,7 @@ function Map () {
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
   // console.log(dbMarkers)
- 
+
   const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
 
   const options = useMemo(() => ({
@@ -38,22 +37,22 @@ function Map () {
     { value: 'Karearea', label: 'Karearea' },
     { value: 'Yellowhead', label: 'Yellowhead' },
     { value: 'Kākāriki', label: 'Kākāriki' },
-    { value: 'Pūtangitangi', label: 'Pūtangitangi' },
+    { value: 'Pūtangitangi', label: 'Pūtangitangi' }
   ]
 
   function handleChange (evt) {
     setBird(evt.value)
   }
-  
+
   useEffect(() => {
     dispatch(fetchMarkers())
   }, [])
-  
+
   const addMarker = (coords) => {
     const name = bird
-    let markers = {
+    const markers = {
       name: name,
-      coords: coords,
+      coords: coords
     }
     console.log(markers)
     dispatch(saveMarkersThunk(markers))
@@ -79,7 +78,7 @@ function Map () {
                 <Marker
                   key={marker.id}
                   draggable={true}
-                  position={{lat: marker.lat, lng: marker.lng}}
+                  position={{ lat: marker.lat, lng: marker.lng }}
                   onDragEnd={e => marker.coords = e.latLng.toJSON()}
                   icon="birds/birds/bird.png"
                   label={{ text: marker.name, color: '#FFFFFF' }}
@@ -88,9 +87,9 @@ function Map () {
             })
           ) : null }
         </GoogleMap>
-       <div className='bird-paragraph'>
-         <p> You have seen a {bird} in Poneke!</p>
-       </div>
+        <div className='bird-paragraph'>
+          <p> You have seen a {bird} in Poneke!</p>
+        </div>
       </div>
     </>
   )
