@@ -30,15 +30,15 @@ router.get('/birdsightings', (req, res) => {
 
 // GET API/V1/user/:id
 
-router.get('/user/:id', (req, res) => {
-  db.getUserBirds(Number(req.params.id))
-    .then((birds) => {
-      res.json(birds)
-    })
-    .catch((err) => {
-      res.status(500).json({ message: err.message })
-    })
-})
+// router.get('/user/:id', (req, res) => {
+//   db.getUserBirds(Number(req.params.id))
+//     .then((birds) => {
+//       res.json(birds)
+//     })
+//     .catch((err) => {
+//       res.status(500).json({ message: err.message })
+//     })
+// })
 
 // POST API/V1/user/:id
 
