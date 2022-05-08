@@ -4,6 +4,8 @@ import Select from 'react-select'
 
 function AddBirdSighting (props) {
   const [location, setLocation] = useState('')
+  const [bird, setBird] = useState('Undefined manu')
+  const [show, setShow] = useState(false)
 
   const { id } = useParams()
 
@@ -13,11 +15,15 @@ function AddBirdSighting (props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(location + ' ' + bird)
   }
 
-  function handleSelectChange (evt) {
-    setBird(evt.value)
+  function handleSelectChange (e) {
+    setBird(e.value)
   }
+
+  const showAdd = () => setShow(true)
+  const closeAdd = () => setShow(false)
 
   const birdOptions = [
     { value: 'Ruru/Morepork', label: 'Ruru/Morepork', id: 1 },
@@ -35,13 +41,26 @@ function AddBirdSighting (props) {
     { value: 'Pūtangitangi/Paradise Shelduck', label: 'Pūtangitangi/Paradise Shelduck', id: 13 }
   ]
 
+  const renderAddBirdSighting = () => {
+    return (
+      <>
+        { show ? (
+          !id ? <Select onChange={handleSelectChange} options = {birdOptions} /> : console.log('no id')
+        ) : (
+          null) }
+        <form onSubmit={handleSubmit} >
+          <input id='' type='text' value={location} onChange={handleType} />
+          <input type='submit' value='Add location'/>
+          <button onClick={closeAdd}>Close</button>
+        </form>
+      </>
+    )
+  }
+
   return (
     <div>
-      { id ? <Select onChange={handleSelectChange} options = {birdOptions} /> : console.log('no id') }
-      <form onSubmit={handleSubmit} >
-        <input id='' type='text' value={location} onChange={handleType} />
-        <input type='submit' value='Add location'/>
-      </form>
+      <button onClick={showAdd}>Add A bird</button>
+      {show ? renderAddBirdSighting() : null }
     </div>
   )
 }
