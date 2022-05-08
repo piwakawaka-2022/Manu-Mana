@@ -111,6 +111,62 @@ exports.seed = function (knex) {
           description:
             'A large duck sometimes seen near the Duck Pond or Lady Norwood Rose Garden in summer. The female has a white head, the male black. The male makes a deep honking noise',
         },
+        {
+          id: 14,
+          name: 'Aotearoa Robin',
+          maori_name: 'Toutouwai',
+          photo: '/birds/birds/robin.png',
+          description:
+            'The Aotearoa Robin or Toutouwai is a sparrow-sized bird found only in New Zealand. They are friendly and trusting, often coming to within a couple of metres of people. This species was extinct in the lower North Island until 76 birds were transferred to ZEALANDIA from Kapiti Island in 2001 and 2002. Robins have adapted very well to life here and they are now found throughout the sanctuary. They were even the first species to be transferred out of ZEALANDIA to support a new population on Matiu/Somes Island.',
+        },
+        {
+          id: 15,
+          name: 'Pūkeko',
+          maori_name: 'Pūkeko',
+          photo: '/birds/birds/pukeko.png',
+          description:
+            'Endearingly reffered to as a swamp hen. Pūkeko feet are big, and they have long toes that are excellent at walking over squishy, muddy ground. When threatened, pūkeko flap their wings and show off their powerful beak. They will stand up for their young and protect the nest from hawks and other predators',
+        },
+        {
+          id: 16,
+          name: 'Te Ika-a-Māui (North Island) Brown Kiwi',
+          maori_name: 'Te Ika-a-Māui Parauri Kiwi',
+          photo: '/birds/birds/brownkiwi.png',
+          description:
+            'The Kiwi is a unique and curious bird: it cannot fly, has loose, hair-like feathers, strong legs and no tail. New Zealanders have been affectionately called `Kiwis` since the nickname was bestowed by Australian soldiers in the First World War. Today a lot of dedicated people help to prevent Kiwi from becoming extinct. As of 2022, their population was calculated at around 24,550 birds, living in 25 broad clusters. Females weigh in at 2–5kgs, and their male counterparts weigh a bit less at 1.4–3kg. Standing 50 to 65cm tall, it’s no surprise they can’t fly. This is partly also due to their dense bone structure. They have a small claw at the end of each wing, which they may use to fight in defence of their territory if necessary!',
+        },
+        {
+          id: 17,
+          name: 'Kākāpō',
+          maori_name: 'Kākāpō',
+          photo: '/birds/birds/kakapo.png',
+          description:
+            'The Kākāpō is a large green parrot with a distinctive owl-like face and a waddling gait. They cannot fly, but they climb well. Our most exquisitely perfumed bird, it’s like its feathers have been dipped in a musky array of essential oils that could come straight from a Middle Eastern perfumier. We’re all cheering as it waddles back from the brink of extinction. The kākāpō was even endorsed by Stephen Fry. There are only 199 Kākāpō alive today.',
+        },
+        {
+          id: 18,
+          name: 'Takahē',
+          maori_name: 'Takahē',
+          photo: '/birds/birds/takahe.png',
+          description:
+            'The flightless Takahē is a unique bird, a conservation icon and a survivor. Takahē have stout red legs and a large, strong red beak. Their feathers range from a dark royal blue head, neck and breast, to peacock blue shoulders, through to shades of iridescent turquoise and olive green on their wings and back. They have wings, but only use them for display during courtship or as a show of aggression. Takahē only breed once a year, raising 1–2 chicks. The Te Ika-a-Māui (North Island) Takahē is unfortunately extinct.',
+        },
+        {
+          id: 19,
+          name: 'Blue Duck',
+          maori_name: 'Whio',
+          photo: '/birds/birds/whio.png',
+          description:
+            'The iconic Whio is only found in New Zealand. With only 3000 in the wild it faces a risk of becoming extinct. A species that Māori have a strong cultural, spiritual, and historic connection with. Their Māori name is Whio in Te Ika-a-Māui (North Island) or Ko Whio Whio in Te Waipounamu (South Island), which depicts the call of the male bird. They are forever watchful – they will always see you before you see them, and the male will sound the alarm call. Whio are believed to be an ancient species of waterfowl, that appeared at a very early stage in evolutionary history. Their isolation in New Zealand has resulted in unique anatomical and behavioural features. The Whio is a river specialist, and one of the few waterfowl worldwide that live year round on fast-flowing rivers. They are a key indicator of healthy rivers and streams. The more breeding pairs of Whio the healthier the river. Whio may seem tame and unafraid, but to keep them safe you should give them space and watch them from a distance. You can view them up close on the New Zealand $10 note. ',
+        },
+        {
+          id: 20,
+          name: 'Aotearoa Fernbird',
+          maori_name: 'Mātātā',
+          photo: '/birds/birds/matata.png',
+          description:
+            'Mātātā inhabit wetlands throughout New Zealand. They are a potential indicator of wetland health because they are dependent on the presence of high quality and ecologically diverse habitats and rich food supplies. Mātātā are rarely seen because of their secretive behaviour and excellent camouflage. These secretive birds have disappeared from large areas of New Zealand, and populations continue to decline.',
+        },
       ])
     })
 }
