@@ -10,6 +10,9 @@ export function getUserSightings() {
   })
 }
 
-export function addBirdSighting() {
-  return request.post('/api/v1/birds')
+export function addBirdSighting(newBirdSighting) {
+  return request
+    .post('/api/v1/birds')
+    .send(newBirdSighting)
+    .then((res) => res.body)
 }

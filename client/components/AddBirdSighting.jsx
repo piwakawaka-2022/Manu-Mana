@@ -1,21 +1,36 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
+import { addSightingThunk } from '../actions/birds'
 
 function AddBirdSighting (props) {
-  const [location, setLocation] = useState('')
+  const auth = useSelector((redux) => redux.auth)
+
+  const [addLocation, setAddLocation] = useState('')
+  const [addEntry, setAddEntry] = useState({ bird_id: null, location: null, user_id: null, timestamps: null })
   const [bird, setBird] = useState('Undefined manu')
   const [show, setShow] = useState(false)
 
+  const dispatch = useDispatch()
+
   const { id } = useParams()
+  const date = new Date()
 
   const handleType = (e) => {
-    setLocation(e.target.value)
+    setAddLocation(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(location + ' ' + bird)
+
+    addEntry.bird_id = bird
+    addEntry.location = addLocation
+    addEntry.timestamps = date
+    addEntry.user_id = auth.user.id
+
+    dispatch(addSightingThunk(addEntry))
+    closeAdd()
   }
 
   function handleSelectChange (e) {
@@ -26,30 +41,30 @@ function AddBirdSighting (props) {
   const closeAdd = () => setShow(false)
 
   const birdOptions = [
-    { value: 'Ruru/Morepork', label: 'Ruru/Morepork', id: 1 },
-    { value: 'Kōkako', label: 'Kōkako', id: 2 },
-    { value: 'Korimako/Bellbird', label: 'Korimako/Bellbird', id: 3 },
-    { value: 'Kōtare/Aotearoa Kingfisher', label: 'Kōtare/Aotearoa Kingfisher', id: 4 },
-    { value: 'Tūī', label: 'Tūī', id: 5 },
-    { value: 'Kererū/Aotearoa Wood Pigeon', label: 'Kererū/Aotearoa Wood Pigeon', id: 6 },
-    { value: 'Kea', label: 'Kea', id: 7 },
-    { value: 'Pīwakawaka/Aotearoa Fantail', label: 'Pīwakawaka/Aotearoa Fantail', id: 8 },
-    { value: 'Karearea/Aotearoa Falcon', label: 'Karearea/Aotearoa Falcon', id: 9 },
-    { value: 'Kākā', label: 'Kākā', id: 10 },
-    { value: 'Mohua/Yellowhead', label: 'Mohua/Yellowhead', id: 11 },
-    { value: 'Kākāriki/Red-crowned Parakeet', label: 'Kākāriki/Red-crowned Parakeet', id: 12 },
-    { value: 'Pūtangitangi/Paradise Shelduck', label: 'Pūtangitangi/Paradise Shelduck', id: 13 }
+    { value: 1, label: 'Ruru/Morepork' },
+    { value: 2, label: 'Kōkako' },
+    { value: 3, label: 'Korimako/Bellbird' },
+    { value: 4, label: 'Kōtare/Aotearoa Kingfisher' },
+    { value: 5, label: 'Tūī', id: 5 },
+    { value: 6, label: 'Kererū/Aotearoa Wood Pigeon' },
+    { value: 7, label: 'Kea', id: 7 },
+    { value: 8, label: 'Pīwakawaka/Aotearoa Fantail' },
+    { value: 9, label: 'Karearea/Aotearoa Falcon' },
+    { value: 10, label: 'Kākā' },
+    { value: 11, label: 'Mohua/Yellowhead' },
+    { value: 12, label: 'Kākāriki/Red-crowned Parakeet' },
+    { value: 13, label: 'Pūtangitangi/Paradise Shelduck' }
   ]
 
   const renderAddBirdSighting = () => {
     return (
       <>
         { show ? (
-          !id ? <Select onChange={handleSelectChange} options = {birdOptions} /> : console.log('no id')
+          !id ? <Select onChange={handleSelectChange} options = {birdOptions} /> : null
         ) : (
           null) }
-        <form onSubmit={handleSubmit} >
-          <input id='' type='text' value={location} onChange={handleType} />
+        <form onSubmit={handleSubmit}>
+          <input id='' type='text' value={addLocation} onChange={handleType} />
           <input type='submit' value='Add location'/>
           <button onClick={closeAdd}>Close</button>
         </form>
@@ -59,8 +74,7 @@ function AddBirdSighting (props) {
 
   return (
     <div>
-      <button onClick={showAdd}>Add A bird</button>
-      {show ? renderAddBirdSighting() : null }
+      {show ? renderAddBirdSighting() : <button onClick={showAdd}>Add A bird</button> }
     </div>
   )
 }
