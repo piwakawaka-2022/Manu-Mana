@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { loginError, registerUserRequest } from '../actions/auth'
 
-function Register() {
+function Register () {
   const navigateTo = useNavigate()
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
@@ -14,7 +14,7 @@ function Register() {
     contact_details: '',
     email_address: '',
     password: '',
-    confirm_password: '',
+    confirm_password: ''
   })
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Register() {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       }
     })
   }
@@ -49,7 +49,7 @@ function Register() {
   return (
     <form className="Register form box" onSubmit={handleSubmit}>
       <section className="section has-background-white">
-      <h1 className="title is-2">Register</h1>
+        <h1 className="title is-2">Register</h1>
       </section>
       <hr />
       {auth.errorMessage && (
@@ -67,53 +67,53 @@ function Register() {
           value={formData.username}
         />
       </label>
-        <label className="label is-large has-text-centered">
-          <input
-            required
-            className="input is-large has-text-centered is-fullwidth"
-            placeholder="Contact Details"
-            type="text"
-            name="contact_details"
-            onChange={handleChange}
-            value={formData.contact_details}
-          />
-        </label>
-        <label className="is-6 label is-large has-text-centered">
-          <input
-            required
-            className="input is-large has-text-centered is-fullwidth"
-            placeholder="Email Adress"
-            type="text"
-            name="email_address"
-            onChange={handleChange}
-            value={formData.email_address}
-          />
-        </label>
+      <label className="label is-large has-text-centered">
+        <input
+          required
+          className="input is-large has-text-centered is-fullwidth"
+          placeholder="Contact Details"
+          type="text"
+          name="contact_details"
+          onChange={handleChange}
+          value={formData.contact_details}
+        />
+      </label>
+      <label className="is-6 label is-large has-text-centered">
+        <input
+          required
+          className="input is-large has-text-centered is-fullwidth"
+          placeholder="Email Adress"
+          type="text"
+          name="email_address"
+          onChange={handleChange}
+          value={formData.email_address}
+        />
+      </label>
       <br />
-        <label className="is-6 label is-large has-text-centered">
-          <input
-            required
-            className="input is-large has-text-centered is-fullwidth"
-            placeholder="Password"
-            type="password"
-            name="password"
-            autoComplete="new-password"
-            onChange={handleChange}
-            value={formData.password}
-          />
-        </label>
-        <label className="is-6 label is-large has-text-centered">
-          <input
-            required
-            className="input is-large has-text-centered is-fullwidth"
-            placeholder="Password"
-            type="password"
-            name="confirm_password"
-            autoComplete="new-password"
-            onChange={handleChange}
-            value={formData.confirm_password}
-          />
-        </label>
+      <label className="is-6 label is-large has-text-centered">
+        <input
+          required
+          className="input is-large has-text-centered is-fullwidth"
+          placeholder="Password"
+          type="password"
+          name="password"
+          autoComplete="new-password"
+          onChange={handleChange}
+          value={formData.password}
+        />
+      </label>
+      <label className="is-6 label is-large has-text-centered">
+        <input
+          required
+          className="input is-large has-text-centered is-fullwidth"
+          placeholder="Password"
+          type="password"
+          name="confirm_password"
+          autoComplete="new-password"
+          onChange={handleChange}
+          value={formData.confirm_password}
+        />
+      </label>
       <input
         className="button is-danger is-large is-fullwidth"
         value="Register"

@@ -42,7 +42,7 @@ router.get('/birdsightings', (req, res) => {
 
 // POST API/V1/user/:id
 
-router.post('/user/:id', (req, res) => {
+router.post('/', (req, res) => {
   const newBirdSighting = req.body
 
   db.addBird(newBirdSighting)

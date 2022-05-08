@@ -2,8 +2,11 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+import AddBirdSighting from './AddBirdSighting'
+
 function Bird () {
   const birds = useSelector(globalState => globalState.birds)
+  const auth = useSelector((redux) => redux.auth)
 
   const { id } = useParams()
 
@@ -11,7 +14,7 @@ function Bird () {
 
   return (
     <>
-      <div> <AddBirdSighting bird={birdData} /> </div>
+      <div>{auth.isAuthenticated ? (<AddBirdSighting bird={birdData} />) : null }</div>
       <div>
         <img src={birdData[0]?.photo} height='300px'/>
         <h1> {birdData[0]?.maori_name} </h1>
