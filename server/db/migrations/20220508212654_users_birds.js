@@ -4,7 +4,7 @@ exports.up = function (knex) {
     table.integer('bird_id')
     table.integer('user_id')
     table.string('location')
-    table.timestamps('timestamps')
+    table.boolean('timestamps')
   })
 }
 
