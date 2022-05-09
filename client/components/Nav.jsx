@@ -22,7 +22,7 @@ function Nav () {
         sx={{
           width: '100%',
           height: '55vw',
-          backgroundImage: `url(${'birds/birds/MANA_MANU_BANNER.png'})`,
+          backgroundImage: `url(${'./birds/MANA_MANU_BANNER.png'})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           textAlign: 'center',
@@ -39,7 +39,6 @@ function Nav () {
             <Button><Link to="/">Home</Link></Button>
             <Button><Link to='/birdlist' className=''> List Of Recent Bird Sightings </Link></Button>
             <Button><Link to='/bird-database'> Birds You're Likely To See Around Poneke </Link></Button>
-
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>

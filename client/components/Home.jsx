@@ -2,8 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Map from './Map'
 import AddBirdSighting from './AddBirdSighting'
-import { Typography, Container } from '@mui/material'
+import Container from '@mui/material/Container'
 import MasonryImageList from './MasonryImageList'
+import Footer from './Footer'
 
 function Home () {
   const auth = useSelector((redux) => redux.auth)
@@ -14,7 +15,7 @@ function Home () {
         <div className='map-select-container'>
           <div className='map-heading'>
             {auth.isAuthenticated ? <AddBirdSighting /> : null}
-            <h3>These are the manu that have been recently sighted in your neighbourhood! </h3>
+            <h3>RECENTLY SIGHTED MANU IN YOUR AREA </h3>
           </div>
           <Map />
         </div>
@@ -22,6 +23,9 @@ function Home () {
           <MasonryImageList/>
         </div>
       </Container>
+      <div>
+        <Footer />
+      </div>
     </>
   )
 }
