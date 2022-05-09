@@ -11,6 +11,33 @@ import Bird from './Bird'
 import UserPage from './UserPage'
 import { getBirdsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
+// import { ThemeProvider } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { lightGreen, grey } from '@mui/material/colors'
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: grey[200],
+      main: grey[400],
+      dark: grey[800],
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: lightGreen[500],
+      main: lightGreen[700],
+      dark: lightGreen[900],
+      contrastText: '#000',
+    },
+  },
+  typography : {
+    fontFamily: 'Tenor+Sans',
+    fontWeightLight: 400,
+    fontWeightRegular: 600,
+    fontWeightBold: 900,
+  }
+})
 
 function App () {
   const dispatch = useDispatch()
@@ -22,30 +49,28 @@ function App () {
   }, [])
 
   return (
-    <>
-      <div>
-        <Nav />
-      </div>
-      <div className="colomn">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/birdlist" element={<BirdSightingsList />} />
-          <Route path='/bird-database' element={<GlobalBirdList />} />
-          <Route path='/birds/:id'element={<Bird />} />
-          {!auth.isAuthenticated && (
-            <>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </>
-          )}
-          {auth.isAuthenticated && (
-            <>
-              <Route path="/user/:id" element={<UserPage />}/>
-            </>
-          )}
-        </Routes>
-      </div>
-    </>
+    <ThemeProvider theme={theme}>
+          <Nav />
+        <div className="colomn">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/birdlist" element={<BirdSightingsList />} />
+            <Route path='/bird-database' element={<GlobalBirdList />} />
+            <Route path='/birds/:id'element={<Bird />} />
+            {!auth.isAuthenticated && (
+              <>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </>
+            )}
+            {auth.isAuthenticated && (
+              <>
+                <Route path="/user/:id" element={<UserPage />}/>
+              </>
+            )}
+          </Routes>
+        </div>
+    </ThemeProvider>
   )
 }
 

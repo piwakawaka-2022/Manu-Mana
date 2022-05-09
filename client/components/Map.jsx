@@ -14,8 +14,9 @@ function Map () {
     libraries: ['places']
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-  // console.log(dbMarkers)
+  
 
+   
   const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
 
   const options = useMemo(() => ({
