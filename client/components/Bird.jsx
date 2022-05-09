@@ -12,7 +12,7 @@ function Bird () {
 
   const birdData = birds.filter(bird => bird.id === Number(id))
 
-  console.log(birdData)
+  console.log(id)
 
   return (
     <>

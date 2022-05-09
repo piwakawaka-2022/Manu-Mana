@@ -5,11 +5,15 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
   const [currentPage, setCurrentPage] = useState(1)
 
   function goToNextPage () {
-    setCurrentPage((page) => page + 1)
+    if (currentPage <= pageLimit - 1) {
+      setCurrentPage((page) => page + 1)
+    }
   }
 
   function goToPreviousPage () {
-    setCurrentPage((page) => page - 1)
+    if (currentPage > 1) {
+      setCurrentPage((page) => page - 1)
+    }
   }
 
   function changePage (e) {

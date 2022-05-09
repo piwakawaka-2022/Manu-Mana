@@ -24,19 +24,18 @@ function AddBirdSighting (props) {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    addEntry.bird_id = bird
+    if (!id) {
+      addEntry.bird_id = bird
+    } else {
+      addEntry.bird_id = id
+    }
     addEntry.location = addLocation
     addEntry.timestamps = date
     addEntry.user_id = auth.user.id
 
-    console.log(addEntry)
-
     dispatch(addSightingThunk(addEntry))
+    setAddLocation('')
     closeAdd()
-  }
-
-  function handleSelectChange (e) {
-    setBird(e.value)
   }
 
   const showAdd = () => setShow(true)
@@ -62,7 +61,7 @@ function AddBirdSighting (props) {
     return (
       <>
         { show ? (
-          !id ? <Select onChange={handleSelectChange} options = {birdOptions} /> : null
+          !id ? <Select onChange={(e) => setBird(e.value)} options = {birdOptions} /> : null
         ) : (
           null) }
         <form onSubmit={handleSubmit}>
