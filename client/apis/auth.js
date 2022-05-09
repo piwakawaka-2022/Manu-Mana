@@ -13,7 +13,6 @@ export function register(creds) {
   return authRegister(creds, { baseUrl })
     .then((userInfo) => userInfo)
     .catch((err) => {
-      console.log(err.message)
       throw errorMessages[err.message]
     })
 }
@@ -22,7 +21,6 @@ export function login(creds) {
   return authLogin(creds, { baseUrl })
     .then((userInfo) => userInfo)
     .catch((err) => {
-      console.log(err.message)
       throw errorMessages[err.message]
     })
 }
