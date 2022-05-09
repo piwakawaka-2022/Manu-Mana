@@ -3,16 +3,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function BirdSightings (props) {
-  const { name, maori_name, location, bird_id, timestamps, username } = props.bird || { }
+  const { name, maori_name, location, bird_id, timestamp, username } = props.bird || { }
 
-  const date = new Date(timestamps).toDateString()
-  const time = new Date(timestamps).toLocaleTimeString()
+  const date = new Date(timestamp).toDateString()
+  let hours = new Date(timestamp).getHours()
+  const minutes = new Date(timestamp).getMinutes()
+  const amOrPm = hours >= 12 ? 'pm' : 'am'
 
-  // if (time[0] > 0 && time[1] > 2) {
-  //   console.log(time + ' pm')
-  // } else {
-  //   console.log(time + ' am')
-  // }
+  hours = (hours % 12) || 12
+
+  const time = `${hours}:${minutes} ${amOrPm}`
 
   return (
     <>

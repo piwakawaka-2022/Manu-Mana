@@ -8,14 +8,14 @@ function AddBirdSighting (props) {
   const auth = useSelector((redux) => redux.auth)
 
   const [addLocation, setAddLocation] = useState('')
-  const [addEntry, setAddEntry] = useState({ bird_id: null, location: null, user_id: null, timestamps: null })
+  const [addEntry] = useState({ bird_id: null, location: null, user_id: null, timestamp: null })
   const [bird, setBird] = useState('Undefined manu')
   const [show, setShow] = useState(false)
 
   const dispatch = useDispatch()
 
   const { id } = useParams()
-  const date = new Date()
+  const date = new Date() // fix this to return the string of numbers
 
   const handleType = (e) => {
     setAddLocation(e.target.value)
@@ -30,7 +30,7 @@ function AddBirdSighting (props) {
       addEntry.bird_id = id
     }
     addEntry.location = addLocation
-    addEntry.timestamps = date
+    addEntry.timestamp = date
     addEntry.user_id = auth.user.id
 
     dispatch(addSightingThunk(addEntry))
