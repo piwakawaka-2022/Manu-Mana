@@ -56,7 +56,6 @@ function Map () {
       name: name,
       coords: coords
     }
-    console.log(markers)
     dispatch(saveMarkersThunk(markers))
   }
 
@@ -76,20 +75,19 @@ function Map () {
           options={options}
           onLoad={onLoad}
           onClick={(e) => addMarker(e.latLng.toJSON())}>
-          {dbMarkers ? (
-            dbMarkers.map((marker) => {
+          { dbMarkers.map((marker) => {
               return (
                 <Marker
                   key={marker.id}
                   draggable={true}
                   position={{ lat: marker.lat, lng: marker.lng }}
                   onDragEnd={e => marker.coords = e.latLng.toJSON()}
-                  icon="birds/birds/bird.png"
+                  icon="birds/bird.png"
                   label={{ text: marker.name, color: '#FFFFFF' }}
                 />
               )
             })
-          ) : null }
+          }
         </GoogleMap>
         <div className='bird-paragraph'>
           <p> You have seen a {bird} in Poneke!</p>

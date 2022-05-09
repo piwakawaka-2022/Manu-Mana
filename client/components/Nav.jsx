@@ -24,7 +24,7 @@ function Nav () {
       sx={{
         width: `100%`,
         height: `55vw`,
-        backgroundImage: `url(${'birds/birds/MANA_MANU_BANNER.png'})` ,
+        backgroundImage: `url(${'birds/MANA_MANU_BANNER.png'})` ,
         backgroundRepeat: `no-repeat`,
         backgroundSize: `cover`,
         textAlign: `center`,
