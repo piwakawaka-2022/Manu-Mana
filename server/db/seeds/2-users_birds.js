@@ -9,27 +9,27 @@ exports.seed = function (knex) {
     .del()
     .then(function () {
       // Inserts seed entries
-      const timestamp = Date.now()
+      const time = new Date()
       return knex('users_birds').insert([
         {
           id: 1,
           user_id: 1,
           bird_id: 10,
-          timestamps: timestamp,
+          timestamp: time,
           location: 'Khandallah',
         },
         {
           id: 2,
           user_id: 1,
           bird_id: 11,
-          timestamps: timestamp,
+          timestamp: time,
           location: 'Karori',
         },
         {
           id: 3,
           user_id: 2,
           bird_id: 2,
-          timestamps: timestamp,
+          timestamp: time,
           location: 'Newtown',
         },
       ])

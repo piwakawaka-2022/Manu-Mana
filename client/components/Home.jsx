@@ -15,7 +15,7 @@ function Home () {
         <div className='map-select-container'>
           <div className='map-heading'>
             {auth.isAuthenticated ? <AddBirdSighting /> : null}
-            <h3>These are the manu that have been seen recenly in your neighbourhood! </h3>
+            <h3>These are the manu that have been recently sighted in your neighbourhood! </h3>
           </div>
           <Map />
         </div>

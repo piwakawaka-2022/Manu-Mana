@@ -4,7 +4,7 @@ exports.up = function (knex) {
     table.string('name')
     table.string('maori_name')
     table.string('photo')
-    table.string('description')
+    table.text('description')
   })
 }
 

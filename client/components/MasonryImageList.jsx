@@ -35,79 +35,79 @@ export default function MasonryImageList () {
 
 const itemData = [
   {
-    img: './birds/birds/ruru-morepork.png',
+    img: './birds/ruru-morepork.png',
     title: 'Ruru'
   },
   {
-    img: './birds/birds/pukeko.png',
+    img: './birds/pukeko.png',
     title: 'Pukeko'
   },
   {
-    img: './birds/birds/matata.png',
+    img: './birds/matata.png',
     title: 'Matata'
   },
   {
-    img: './birds/birds/piwakawaka-fantail.png',
+    img: './birds/piwakawaka-fantail.png',
     title: 'Piwakawaka'
   },
   {
-    img: './birds/birds/robin.png',
+    img: './birds/robin.png',
     title: 'Toutouwai'
   },
   {
-    img: './birds/birds/takahe.png',
+    img: './birds/takahe.png',
     title: 'Takahe'
   },
   {
-    img: './birds/birds/tui.png',
+    img: './birds/tui.png',
     title: 'Tui'
   },
   {
-    img: './birds/birds/kea.png',
+    img: './birds/kea.png',
     title: 'Kea'
   },
   {
-    img: './birds/birds/kokako.png',
+    img: './birds/kokako.png',
     title: 'Kokako'
   },
   {
-    img: './birds/birds/mohua-yellowhead.png',
+    img: './birds/mohua-yellowhead.png',
     title: 'Mohua'
   },
   {
-    img: './birds/birds/kaka.png',
+    img: './birds/kaka.png',
     title: 'Kaka'
   },
   {
-    img: './birds/birds/kakapo.png',
+    img: './birds/kakapo.png',
     title: 'Kakapo'
   },
   {
-    img: './birds/birds/korimako-bellbird.png',
+    img: './birds/korimako-bellbird.png',
     title: 'Korimako'
   },
   {
-    img: './birds/birds/karearea-nzfalcon.png',
+    img: './birds/karearea-nzfalcon.png',
     title: 'Karearea'
   },
   {
-    img: './birds/birds/brownkiwi.png',
+    img: './birds/brownkiwi.png',
     title: 'Kiwi'
   },
   {
-    img: './birds/birds/kakarikikaraka-orangefrontedparakeet.png',
+    img: './birds/kakarikikaraka-orangefrontedparakeet.png',
     title: 'Kakarikikaraka'
   },
   {
-    img: './birds/birds/pūtangitangi.png',
+    img: './birds/pūtangitangi.png',
     title: 'Pūtangitangi'
   },
   {
-    img: './birds/birds/kukupa-kereru.png',
+    img: './birds/kukupa-kereru.png',
     title: 'Kereru'
   },
   {
-    img: './birds/birds/ruru-morepork.png',
+    img: './birds/ruru-morepork.png',
     title: 'Ruru'
   }
 ]
