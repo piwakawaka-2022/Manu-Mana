@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
@@ -28,6 +28,8 @@ function AddBirdSighting (props) {
     addEntry.location = addLocation
     addEntry.timestamps = date
     addEntry.user_id = auth.user.id
+
+    console.log(addEntry)
 
     dispatch(addSightingThunk(addEntry))
     closeAdd()
