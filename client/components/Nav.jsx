@@ -34,8 +34,6 @@ function Nav () {
         },
       }}
     />
-      <div className='header-image'>
-      </div>
       <nav>
         
         <Container align='center' colour='Primary'>

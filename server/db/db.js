@@ -33,7 +33,7 @@ function getUserBirds(db = conn) {
 /// db function that we are using to make form work.
 
 function addBird(newBirdSighting, db = conn) {
-  return db('users_birds').insert(newBirdSighting)
+  return db('users_birds').insert(newBirdSighting, 'id')
 }
 
 var date = new Date()
@@ -48,11 +48,14 @@ function getMarker(id, db = conn) {
 }
 
 function dbAddMarker(markerObj, db = conn) {
-  return db('markers').insert({
-    name: markerObj.name,
-    lat: markerObj.coords.lat,
-    lng: markerObj.coords.lng,
-  })
+  return db('markers').insert(
+    {
+      name: markerObj.name,
+      lat: markerObj.coords.lat,
+      lng: markerObj.coords.lng,
+    },
+    'id'
+  )
 }
 
 module.exports = {
