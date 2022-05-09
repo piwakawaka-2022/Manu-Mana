@@ -11,7 +11,6 @@ import Bird from './Bird'
 import UserPage from './UserPage'
 import { getBirdsThunk, getSightingsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
-// import { ThemeProvider } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { lightGreen, grey } from '@mui/material/colors'
 

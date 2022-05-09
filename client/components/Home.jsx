@@ -2,9 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Map from './Map'
 import AddBirdSighting from './AddBirdSighting'
-import { Container } from '@mui/material'
+import { Typography, Container } from '@mui/material'
 import MasonryImageList from './MasonryImageList'
-
 
 function Home () {
   const auth = useSelector((redux) => redux.auth)
