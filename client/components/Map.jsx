@@ -3,6 +3,7 @@ import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
+import { FormControl } from '@mui/material'
 
 function Map () {
   const dispatch = useDispatch()
@@ -14,8 +15,9 @@ function Map () {
     libraries: ['places']
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-  // console.log(dbMarkers)
+  
 
+   
   const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
 
   const options = useMemo(() => ({
@@ -63,7 +65,9 @@ function Map () {
   return (
     <>
       <div className='select-container'>
+      <FormControl color='primary.dark' fullwidth>
         <Select onChange={handleChange} options = {birdOptions} />
+      </FormControl>
       </div>
       <div className='map-container'>
         <GoogleMap zoom={12}
