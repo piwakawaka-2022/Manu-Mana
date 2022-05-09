@@ -3,6 +3,7 @@ import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
+import { FormControl } from '@mui/material'
 
 function Map () {
   const dispatch = useDispatch()
@@ -64,7 +65,9 @@ function Map () {
   return (
     <>
       <div className='select-container'>
+      <FormControl color='primary.dark' fullwidth>
         <Select onChange={handleChange} options = {birdOptions} />
+      </FormControl>
       </div>
       <div className='map-container'>
         <GoogleMap zoom={12}
