@@ -1,9 +1,7 @@
 /* eslint-disable camelcase */
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-
-import { getSightingsThunk } from '../actions/birds'
 
 import BirdSightings from './BirdSightings'
 import Pagination from './Pagination'
@@ -11,12 +9,7 @@ import Pagination from './Pagination'
 function UserPage () {
   const birdData = useSelector(globalState => globalState.sightings)
 
-  const dispatch = useDispatch()
   const { id } = useParams()
-
-  useEffect(() => {
-    dispatch(getSightingsThunk())
-  }, [])
 
   const birds = birdData.filter(bird => bird.user_id === Number(id))
   const pageLimit = Math.ceil(birds.length / 4)
