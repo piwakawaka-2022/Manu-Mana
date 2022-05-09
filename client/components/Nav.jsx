@@ -2,11 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logoutUser } from '../actions/auth'
-import { Button } from '@mui/material'
-import { ButtonGroup } from '@mui/material';
-import Box from '@mui/material/Box'
-import { Container } from '@mui/material';
+import { Button, ButtonGroup, Container } from '@mui/material'
 
+import Box from '@mui/material/Box'
 
 function Nav () {
   const navigateTo = useNavigate()
@@ -35,26 +33,26 @@ function Nav () {
       }}
     />
       <nav>
-        
+
         <Container align='center' colour='Primary'>
-        <ButtonGroup colour='Primary' variant='Contained'>
-          <Button><Link to="/">Home</Link></Button>
-          <Button><Link to='/birdlist' className=''> List Of Recent Bird Sightings </Link></Button>
-          <Button><Link to='/bird-database'> Birds You're Likely To See Around Poneke </Link></Button>
-          <Button><Link to={`/user/${auth.user.id}`}> Your Bird Sightings </Link></Button>
-        </ButtonGroup>
+          <ButtonGroup colour='Primary' variant='Contained'>
+            <Button><Link to="/">Home</Link></Button>
+            <Button><Link to='/birdlist' className=''> List of recent bird sightings </Link></Button>
+            <Button><Link to='/bird-database'> Birds you are likely to see around Pōneke </Link></Button>
+            <Button><Link to={`/user/${auth.user.id}`}> Your sightings</Link></Button>
+          </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
-            <ButtonGroup colour='Primary' align='right' variant='Contained'>
-              <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
-            </ButtonGroup>
+              <ButtonGroup colour='Primary' align='right' variant='Contained'>
+                <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
+              </ButtonGroup>
             </>
           ) : (
             <>
-            <ButtonGroup colour='Primary' align='right' variant='Contained'>
-              <Button><Link to="/login" > Login </Link></Button>
-              <Button><Link to="/register" > Register </Link></Button>
-            </ButtonGroup>
+              <ButtonGroup colour='Primary' align='right' variant='Contained'>
+                <Button><Link to="/login" > Login </Link></Button>
+                <Button><Link to="/register" > Register </Link></Button>
+              </ButtonGroup>
             </>
           )}
         </Container>
