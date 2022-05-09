@@ -9,7 +9,7 @@ import Home from './Home'
 import GlobalBirdList from './GlobalBirdList'
 import Bird from './Bird'
 import UserPage from './UserPage'
-import { getBirdsThunk } from '../actions/birds'
+import { getBirdsThunk, getSightingsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
 
 function App () {
@@ -19,6 +19,7 @@ function App () {
     const confirmSuccess = () => {}
     dispatch(checkAuth(confirmSuccess))
     dispatch(getBirdsThunk())
+    dispatch(getSightingsThunk())
   }, [])
 
   return (
