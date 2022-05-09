@@ -37,9 +37,9 @@ function Nav () {
         <Container align='center' colour='Primary'>
           <ButtonGroup colour='Primary' variant='Contained'>
             <Button><Link to="/">Home</Link></Button>
-            <Button><Link to='/birdlist' className=''> List Of Recent Bird Sightings </Link></Button>
-            <Button><Link to='/bird-database'> Birds You're Likely To See Around Poneke </Link></Button>
-            <Button><Link to={`/user/${auth.user.id}`}> Your Bird Sightings </Link></Button>
+            <Button><Link to='/birdlist' className=''> List of recent bird sightings </Link></Button>
+            <Button><Link to='/bird-database'> Birds you are likely to see around Pōneke </Link></Button>
+            <Button><Link to={`/user/${auth.user.id}`}> Your sightings</Link></Button>
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
