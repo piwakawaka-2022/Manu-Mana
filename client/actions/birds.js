@@ -61,6 +61,12 @@ export function addSightingThunk(newSighting) {
       .then((birdData) => {
         return dispatch(addSighting(birdData))
       })
+      .then(() => {
+        return dispatch(getSightingsThunk())
+      })
+      .then(() => {
+        return dispatch(getBirdsThunk())
+      })
       .catch((err) => {
         dispatch(Error(err.message))
       })
