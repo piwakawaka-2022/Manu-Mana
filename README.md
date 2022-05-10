@@ -17,13 +17,13 @@ This repository contains the code files for the MVP of a bird tacking applicatio
 ## 2. View a list of, and information about, native birds that may be seen in and around Poneke
 
 ## Under MVP registered users are able to:
-## 1. Add a bird sighting to the map interface
-## 2. Add a bird sighting to the list of all bird sightings
-## 3. View birds they have seen on a user page
+# 1. Add a bird sighting to the map interface
+# 2. Add a bird sighting to the list of all bird sightings
+# 3. View birds they have seen on a user page
  
 ## What would a mature Manu Mana App feature?
-## 1. Users would be able to add a comment to the bird profile page about what that bird means to them/their iwi/or any other points of significance to them.
-## 2. There would be information regarding the conservation status of the bird, and resources for ways the user can help these birds thrive.
+# 1. Users would be able to add a comment to the bird profile page about what that bird means to them/their iwi/or any other points of significance to them.
+# 2. There would be information regarding the conservation status of the bird, and resources for ways the user can help these birds thrive.
  
 ## How to interact with the Manu Mana MVP
 Simply visit https://manu-mana.herokuapp.com
