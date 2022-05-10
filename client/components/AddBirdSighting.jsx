@@ -4,18 +4,21 @@ import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
 
-function AddBirdSighting (props) {
+function AddBirdSighting () {
   const auth = useSelector((redux) => redux.auth)
 
   const [addLocation, setAddLocation] = useState('')
   const [addEntry] = useState({ bird_id: null, location: null, user_id: null, timestamp: null })
+  const [responseTextFail, setResponseTextFail] = useState(null)
+  const [responseTextPass, setResponseTextPass] = useState(null)
   const [bird, setBird] = useState('Undefined manu')
+  const [birdName, setBirdName] = useState('')
   const [show, setShow] = useState(false)
 
   const dispatch = useDispatch()
 
   const { id } = useParams()
-  const date = new Date() // fix this to return the string of numbers
+  const date = new Date()
 
   const handleType = (e) => {
     setAddLocation(e.target.value)
@@ -33,9 +36,23 @@ function AddBirdSighting (props) {
     addEntry.timestamp = date
     addEntry.user_id = auth.user.id
 
-    dispatch(addSightingThunk(addEntry))
-    setAddLocation('')
-    closeAdd()
+    validatePost()
+  }
+
+  const validatePost = () => {
+    if (addEntry.location === '') {
+      setResponseTextFail('PLEASE ENTER A LOCATION')
+    } else {
+      dispatch(addSightingThunk(addEntry))
+      setAddLocation('')
+      setResponseTextPass(`SUCCESSFULLY ADDED ${birdName.toUpperCase()} TO SIGHTINGS`)
+      closeAdd()
+    }
+  }
+
+  const handleChange = (e) => {
+    setBird(e.value)
+    setBirdName(e.label)
   }
 
   const showAdd = () => setShow(true)
@@ -61,7 +78,7 @@ function AddBirdSighting (props) {
     return (
       <>
         { show ? (
-          !id ? <Select onChange={(e) => setBird(e.value)} options = {birdOptions} /> : null
+          !id ? <Select onChange={handleChange} options = {birdOptions} /> : null
         ) : (
           null) }
         <form onSubmit={handleSubmit}>
@@ -69,6 +86,7 @@ function AddBirdSighting (props) {
           <input type='submit' value='Add location'/>
           <button onClick={closeAdd}>Close</button>
         </form>
+        <p>{responseTextFail}</p>
       </>
     )
   }
@@ -76,6 +94,7 @@ function AddBirdSighting (props) {
   return (
     <div>
       {show ? renderAddBirdSighting() : <button onClick={showAdd}>Add A bird</button> }
+      <p>{responseTextPass}</p>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { checkAuth } from '../actions/auth'
 import Nav from './Nav'
@@ -48,9 +48,12 @@ function App () {
     dispatch(getSightingsThunk())
   }, [])
 
+  const location = useLocation()
+  const currentPage = location.pathname
+
   return (
     <ThemeProvider theme={theme}>
-      <Nav />
+      <Nav activePage={currentPage}/>
       <div className="colomn">
         <Routes>
           <Route path="/" element={<Home />} />
