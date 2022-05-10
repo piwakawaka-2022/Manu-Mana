@@ -13,7 +13,7 @@ function AddBirdSighting () {
   const [addEntry] = useState({ bird_id: null, location: null, user_id: null, timestamp: null })
   const [responseTextFail, setResponseTextFail] = useState(null)
   const [responseTextPass, setResponseTextPass] = useState(null)
-  const [bird, setBird] = useState('Undefined manu')
+  const [bird, setBird] = useState('UNDEFINED MANU')
   const [birdName, setBirdName] = useState('')
   const [show, setShow] = useState(false)
 
@@ -61,19 +61,25 @@ function AddBirdSighting () {
   const closeAdd = () => setShow(false)
 
   const birdOptions = [
-    { value: 1, label: 'Ruru/Morepork' },
-    { value: 2, label: 'Kōkako' },
-    { value: 3, label: 'Korimako/Bellbird' },
-    { value: 4, label: 'Kōtare/Aotearoa Kingfisher' },
-    { value: 5, label: 'Tūī', id: 5 },
-    { value: 6, label: 'Kererū/Aotearoa Wood Pigeon' },
-    { value: 7, label: 'Kea', id: 7 },
-    { value: 8, label: 'Pīwakawaka/Aotearoa Fantail' },
-    { value: 9, label: 'Karearea/Aotearoa Falcon' },
-    { value: 10, label: 'Kākā' },
-    { value: 11, label: 'Mohua/Yellowhead' },
-    { value: 12, label: 'Kākāriki/Red-crowned Parakeet' },
-    { value: 13, label: 'Pūtangitangi/Paradise Shelduck' }
+    { value: 'KAKA', label: 'KAKA' },
+    { value: 'PIWAKAWAKA', label: 'PIWAKAWAKA' },
+    { value: 'KERERŪ', label: 'KERERŪ' },
+    { value: 'RURŪ', label: 'RURŪ' },
+    { value: 'KŌKAKO', label: 'KŌKAKO' },
+    { value: 'KORIMAKO', label: 'KORIMAKO' },
+    { value: 'KŌTARE', label: 'KŌTARE' },
+    { value: 'TŪĪ', label: 'TŪĪ' },
+    { value: 'KEA', label: 'KEA' },
+    { value: 'KAREAREA', label: 'KAREAREA' },
+    { value: 'MOHUA', label: 'MOHUA' },
+    { value: 'KĀKĀRIKI', label: 'KĀKĀRIKI' },
+    { value: 'PŪTANGITANGI', label: 'PŪTANGITANGI' },
+    { value: 'TOUTOUWAI', label: 'TOUTOUWAI' },
+    { value: 'PŪKEKO', label: 'PŪKEKO' },
+    { value: 'KĀKĀPŌ', label: 'KĀKĀPŌ' },
+    { value: 'TAKAHĒ', label: 'TAKAHĒ' },
+    { value: 'WHIO', label: 'WHIO' },
+    { value: 'MĀTĀTĀ', label: 'MĀTĀTĀ' }
   ]
 
   const renderAddBirdSighting = () => {

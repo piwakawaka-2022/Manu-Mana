@@ -3,32 +3,27 @@ import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
-import { FormControl } from '@mui/material'
+import { FormControl, Container } from '@mui/material'
+import { StyledEngineProvider } from '@mui/material/styles'
 
 function Map () {
+  const mapRef = useRef()
   const dispatch = useDispatch()
   const dbMarkers = useSelector(state => state.markers)
-  const [bird, setBird] = useState('Undefined manu')
-  const mapRef = useRef()
+
+  const [bird, setBird] = useState('UNDEFINED MANU')
+  const [coord, setCoord] = useState({ lat: -41.298493517295654, lng: 174.79978666984925 })
   const [libraries] = useState(['places'])
+  
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyDnGHfALAyWDscmt2LcSwTTrG6SMHpUFsU',
     libraries
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-  
-  let center =  { lat: -41.298493517295654, lng: 174.79978666984925 }
-  function CoordState(){
-   dbMarkers? 
-      center =  { lat: dbMarkers[dbMarkers.length -1].lat, lng: dbMarkers[dbMarkers.length -1].lng} :
-   
-      center = { lat: -41.298493517295654, lng: 174.79978666984925 }
-  
-  }
-  
 
-  
-
+  useEffect(() => {
+        dispatch(fetchMarkers())
+      }, [])  
 
   const options = useMemo(() => ({
     mapId: '724b7195aa686651',
@@ -37,34 +32,35 @@ function Map () {
   }), [])
 
   const birdOptions = [
-    { value: 'Kaka', label: 'Kaka' },
-    { value: 'Piwakawaka', label: 'Piwakawaka' },
-    { value: 'Kererū', label: 'Kererū' },
-    { value: 'Ruru', label: 'Ruru' },
-    { value: 'Kōkako', label: 'Kōkako' },
-    { value: 'Bellbird', label: 'Bellbird' },
-    { value: 'NZ Kingfisher', label: 'NZ Kingfisher' },
-    { value: 'Tūī', label: 'Tūī' },
-    { value: 'Kea', label: 'Kea' },
-    { value: 'Karearea', label: 'Karearea' },
-    { value: 'Yellowhead', label: 'Yellowhead' },
-    { value: 'Kākāriki', label: 'Kākāriki' },
-    { value: 'Pūtangitangi', label: 'Pūtangitangi' },
-    { value: 'Toutouwai', label: 'Toutouwai' },
-    { value: 'Pūkeko', label: 'Pūkeko' },
-    { value: 'Kākāpō', label: 'Kākāpō' },
-    { value: 'Takahē', label: 'Takahē' },
-    { value: 'Whio', label: 'Whio' },
-    { value: 'Mātātā', label: 'Mātātā' }
+    { value: 'KAKA', label: 'KAKA' },
+    { value: 'PIWAKAWAKA', label: 'PIWAKAWAKA' },
+    { value: 'KERERŪ', label: 'KERERŪ' },
+    { value: 'RURŪ', label: 'RURŪ' },
+    { value: 'KŌKAKO', label: 'KŌKAKO' },
+    { value: 'KORIMAKO', label: 'KORIMAKO' },
+    { value: 'KŌTARE', label: 'KŌTARE' },
+    { value: 'TŪĪ', label: 'TŪĪ' },
+    { value: 'KEA', label: 'KEA' },
+    { value: 'KAREAREA', label: 'KAREAREA' },
+    { value: 'MOHUA', label: 'MOHUA' },
+    { value: 'KĀKĀRIKI', label: 'KĀKĀRIKI' },
+    { value: 'PŪTANGITANGI', label: 'PŪTANGITANGI' },
+    { value: 'TOUTOUWAI', label: 'TOUTOUWAI' },
+    { value: 'PŪKEKO', label: 'PŪKEKO' },
+    { value: 'KĀKĀPŌ', label: 'KĀKĀPŌ' },
+    { value: 'TAKAHĒ', label: 'TAKAHĒ' },
+    { value: 'WHIO', label: 'WHIO' },
+    { value: 'MĀTĀTĀ', label: 'MĀTĀTĀ' }
   ]
 
-  function handleChange (evt) {
+  const handleChange = (evt) => {
     setBird(evt.value)
   }
 
-  useEffect(() => {
-    dispatch(fetchMarkers())
-  }, [])
+  const mapClick = (e) => {
+    addMarker(e.latLng.toJSON())
+    setCoord(e.latLng.toJSON())
+  }
 
   const addMarker = (coords) => {
     const name = bird
@@ -79,18 +75,18 @@ function Map () {
 
   return (
     <>
-      <div className='select-container'>
-        <FormControl color='primary.dark' fullwidth>
+    <StyledEngineProvider injectFirst>
+        <FormControl color='primary' variant="filled" fullwidth="true">
           <Select onChange={handleChange} options = {birdOptions} />
         </FormControl>
-      </div>
+    </StyledEngineProvider>
       <div className='map-container'>
         <GoogleMap zoom={12}
-          center={center}
+          center={coord}
           mapContainerClassName="map"
           options={options}
           onLoad={onLoad}
-          onClick={(e) => addMarker(e.latLng.toJSON(), CoordState())}>
+          onClick={(e) => mapClick(e)}>
           { dbMarkers.map((marker) => {
               return (
                 <Marker
