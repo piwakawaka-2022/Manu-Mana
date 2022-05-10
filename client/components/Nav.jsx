@@ -18,40 +18,40 @@ function Nav () {
 
   return (
     <>
-    <Box
-      sx={{
-        width: `100%`,
-        height: `55vw`,
-        backgroundImage: `url(${'birds/MANA_MANU_BANNER.png'})` ,
-        backgroundRepeat: `no-repeat`,
-        backgroundSize: `cover`,
-        textAlign: `center`,
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
-      }}
-    />
+      <Box
+        sx={{
+          width: '100%',
+          height: '55vw',
+          backgroundImage: `url(${'birds/MANA_MANU_BANNER.png'})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          textAlign: 'center',
+          '&:hover': {
+            backgroundColor: 'primary.main',
+            opacity: [0.9, 0.8, 0.7]
+          }
+        }}
+      />
       <nav>
 
         <Container align='center' colour='Primary'>
           <ButtonGroup colour='Primary' variant='Contained'>
-            <Button><Link to="/">Home</Link></Button>
-            <Button><Link to='/birdlist' className=''> List Of Recent Bird Sightings </Link></Button>
-            <Button><Link to='/bird-database'> Birds You're Likely To See Around Poneke </Link></Button>
+            <Button><Link to="/">HOME</Link></Button>
+            <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>
+            <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
               <ButtonGroup colour='Primary' align='right' variant='Contained'>
                 <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
-                <Button><Link to={`/user/${auth.user.id}`}> Your Bird Sightings </Link></Button>
+                <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>
               </ButtonGroup>
             </>
           ) : (
             <>
               <ButtonGroup colour='Primary' align='right' variant='Contained'>
-                <Button><Link to="/login" > Login </Link></Button>
-                <Button><Link to="/register" > Register </Link></Button>
+                <Button><Link to="/login" > LOGIN </Link></Button>
+                <Button><Link to="/register" > REGISTER </Link></Button>
               </ButtonGroup>
             </>
           )}
