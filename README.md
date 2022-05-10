@@ -3,7 +3,8 @@ When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making a
 
 
 ## Kaupapa 
-(tbc)
+Manu Mana is more than a web application: the project is about beautiful design, protecting taonga, relationships, and learning in a digital age.
+It is also an exploration of what it means to be an ethical technologist working in Aotearoa. 
 
 
 
@@ -48,11 +49,11 @@ https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
  
  
 ## Authors 
-Catlin Cummings 
-Halmai Mcrae 
-Sebastian Ninness
-Justine Pepperell
-Jesse Stratford
+## Catlin Cummings 
+## Halmai Mcrae 
+## Sebastian Ninness
+## Justine Pepperell
+## Jesse Stratford
  
 ## Licence 
 (tbc)
