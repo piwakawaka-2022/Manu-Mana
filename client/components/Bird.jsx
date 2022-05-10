@@ -12,8 +12,6 @@ function Bird () {
 
   const birdData = birds.filter(bird => bird.id === Number(id))
 
-  console.log(id)
-
   return (
     <>
       <div>{auth.isAuthenticated ? (<AddBirdSighting bird={birdData} />) : null }</div>

@@ -23,12 +23,11 @@ export function receiveMarker(markers) {
 // THUNKS
 
 export function saveMarkersThunk(marker) {
-  console.log('text', marker)
   return (dispatch) => {
     postMarker(marker)
       .then((markerObj) => dispatch(addMarker(markerObj)))
       .catch((err) => {
-        console.log(err.message)
+        dispatch(Error(err.message))
       })
   }
 }
@@ -38,7 +37,7 @@ export function fetchMarkers(markers) {
     getMarkers(markers)
       .then((markersArr) => dispatch(receiveMarker(markersArr)))
       .catch((err) => {
-        console.log(err.message)
+        dispatch(Error(err.message))
       })
   }
 }

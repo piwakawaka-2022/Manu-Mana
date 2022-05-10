@@ -10,14 +10,13 @@ function Map () {
   const dbMarkers = useSelector(state => state.markers)
   const [bird, setBird] = useState('Undefined manu')
   const mapRef = useRef()
+  const [libraries] = useState(['places'])
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyDnGHfALAyWDscmt2LcSwTTrG6SMHpUFsU',
-    libraries: ['places']
+    libraries
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-  
 
-   
   const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
 
   const options = useMemo(() => ({
@@ -64,9 +63,9 @@ function Map () {
   return (
     <>
       <div className='select-container'>
-      <FormControl color='primary.dark' fullwidth>
-        <Select onChange={handleChange} options = {birdOptions} />
-      </FormControl>
+        <FormControl color='primary.dark' fullwidth>
+          <Select onChange={handleChange} options = {birdOptions} />
+        </FormControl>
       </div>
       <div className='map-container'>
         <GoogleMap zoom={12}
