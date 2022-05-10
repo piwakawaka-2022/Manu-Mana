@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
-import { Button, Container, TextField } from '@mui/material'
+import { Button, Container, TextField, Box } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import CloseIcon from '@mui/icons-material/Close'
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
@@ -86,8 +86,14 @@ function AddBirdSighting () {
         ) : (
           null) }
         <form onSubmit={handleSubmit}>
-          <TextField className='register' id='' type='text' value={addLocation} onChange={handleType} />
-          <Button className='register' variant='contained' type='submit' value='add location' endIcon={<AddLocationAltIcon />} >ADD LOCATION</Button>
+          <TextField className='register' id='' type='text' text-size='medium' placeholder="TELL US WHERE..." value={addLocation} onChange={handleType} />
+          <div>
+            <Box height='10px'></Box>
+          </div>
+          <Button className='register' variant='contained' type='submit' value='add location' endIcon={<AddLocationAltIcon />} >ADD TO SIGHTINGS</Button>
+          <div>
+            <Box height='10px'></Box>
+          </div>
           <Button className='register' variant='contained' endIcon={<CloseIcon />} onClick={closeAdd}>CLOSE</Button>
         </form>
         <p>{responseTextFail}</p>

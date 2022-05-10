@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Container, Grid, Paper } from '@mui/material'
+import { Container, Grid, Paper, Button } from '@mui/material'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 
 function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
   const [pages] = useState(Math.round(data.length / data.limit))
@@ -55,31 +57,29 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
         <Container align='center'>
           <div className="pagination">
             {/* previous button */}
-            <button
+            <Button startIcon={<NavigateBeforeIcon />}
               onClick={goToPreviousPage}
               className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
             >
-        prev
-            </button>
+        PREV
+            </Button>
 
             {/* show page numbers */}
             {getPaginationGroup().map((item, index) => (
-              <button
+              <Button
                 key={index}
                 onClick={changePage}
                 className={`paginationItem ${currentPage === item ? 'active' : null}`}
               >
                 <span>{item}</span>
-              </button>
+              </Button>
             ))}
 
             {/* next button */}
-            <button
+            <Button endIcon={<NavigateNextIcon />}
               onClick={goToNextPage}
               className={`next ${currentPage === pages ? 'disabled' : ''}`}
-            >
-        next
-            </button>
+            >NEXT</Button>
           </div>
         </Container>
       </div>
