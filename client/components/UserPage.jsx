@@ -19,7 +19,7 @@ function UserPage () {
       <Pagination
         data = {birds}
         RenderComponent={BirdSightings}
-        title={'Here\'s a list of birds you\'ve seen!'}
+        title={'MANU YOU HAVE SIGHTED • KIA KAHA'}
         pageLimit={pageLimit}
         dataLimit={4}
       />
