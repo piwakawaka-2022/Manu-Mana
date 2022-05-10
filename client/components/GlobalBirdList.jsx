@@ -9,11 +9,10 @@ function GlobalBirdList () {
 
   return (
     <>
-      <div>
-        <Box height='80px'></Box>
-      </div>
+      <Box height='100px'></Box>
       <Container align='center'>
-      <Box height='250px'></Box>
+        <h2>MANU YOU ARE LIKELY TO SEE IN PŌNEKE</h2>
+        <Box height='100px'></Box>
         <Grid container style={{ marginBottom: '20px' }}>
           {birds.map((oneBird) => <Grid align='center' key={oneBird?.id} item xs={12} sm={4} md={3}>
             <Paper>
@@ -23,9 +22,6 @@ function GlobalBirdList () {
         </Grid>
         <Box height='250px'></Box>
       </Container>
-      <div>
-        <Box height='100px'></Box>
-      </div>
     </>
   )
 }

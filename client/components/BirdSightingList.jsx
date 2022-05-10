@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-
+import { Container } from '@mui/material'
 import Pagination from './Pagination'
 import BirdSightings from './BirdSightings'
 
@@ -11,13 +11,15 @@ function BirdSightingsList () {
 
   return (
     <>
-      <Pagination
-        data = {birds}
-        RenderComponent={BirdSightings}
-        title="Manu seen recently in Poneke!"
-        pageLimit={pageLimit}
-        dataLimit={4}
-      />
+      <Container align='center'>
+        <Pagination
+          data = {birds}
+          RenderComponent={BirdSightings}
+          title="MANU RECENTLY SIGHTED IN PŌNEKE"
+          pageLimit={pageLimit}
+          dataLimit={4}
+        />
+      </Container>
     </>
   )
 }

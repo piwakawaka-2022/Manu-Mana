@@ -2,8 +2,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-
 function BirdSightings (props) {
   const { name, maori_name, location, bird_id, timestamp, username } = props.bird || { }
 
@@ -19,15 +17,15 @@ function BirdSightings (props) {
   return (
     <>
       <div className='global-bird-sighting'>
-              <Link to={`/birds/${bird_id}`}>
-                <div>
-                <h2>{maori_name}</h2>
-                <h3>{name}</h3>
-                  <p>Date: {date} {time}</p>
-                  <p>Location: {location}</p>
-                  <p>Added by: {username}</p>
-                 </div>
-              </Link>   
+        <Link to={`/birds/${bird_id}`}>
+          <div>
+            <h2>{maori_name}</h2>
+            <h3>{name}</h3>
+            <p>Date: {date} {time}</p>
+            <p>Location: {location}</p>
+            <p>Added by: {username}</p>
+          </div>
+        </Link>
       </div>
     </>
   )

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
+import { Button } from '@mui/material'
+import VisibilityIcon from '@mui/icons-material/Visibility'
 
 function AddBirdSighting () {
   const auth = useSelector((redux) => redux.auth)
@@ -93,7 +95,7 @@ function AddBirdSighting () {
 
   return (
     <div>
-      {show ? renderAddBirdSighting() : <button onClick={showAdd}>Add A bird</button> }
+      {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>ADD BIRD</Button> }
       <p>{responseTextPass}</p>
     </div>
   )
