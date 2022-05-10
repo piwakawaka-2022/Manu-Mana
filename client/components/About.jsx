@@ -19,13 +19,14 @@ function About () {
       </div>
       <div>
         <h2>Resources used in Manu Mana</h2>
-        <h3>Supporting references for the use of Te Reo Māori in biodiversity reporting and associated web applications</h3>
+        <h3>Use of Te Reo Māori in biodiversity reporting and associated web applications</h3>
         <p><a href='https://www.jstor.org/stable/26841830'>Wehi, P. M., Carter, L., Harawira, T. W., Fitzgerald, G., Lloyd, K., Whaanga, H., &amp; MacLeod, C. J. (2019). Enhancing awareness and adoption of cultural values through use of Māori bird names in science communication and environmental reporting. New Zealand Journal of Ecology, 43(3), 1-9.</a></p>
         <h3>Bird photos</h3>
         <p><a href='https://www.birdoftheyear.org.nz/'>Forest and Bird Te reo o te taiao/Bird of the year 2021.</a></p>
         <h3>Physical descriptions of birds</h3>
-        <p><a href='https://wellingtongardens.nz/assets/Documents/5412aa5a11/J008421-Botanic-Gardens-Bird-Brochure-WEB.pdf'>Data.govt.nz Botanic Gardens Bird Brochure</a></p>
+        <p><a href='https://wellingtongardens.nz/assets/Documents/5412aa5a11/J008421-Botanic-Gardens-Bird-Brochure-WEB.pdf'>Data.govt.nz Botanic Gardens Bird Brochure.</a></p>
         <h3>Bird song</h3>
+        <p><a href='https://www.nhm.ac.uk/discover/how-listening-to-bird-song-can-transform-our-mental-health.html'>How listening to a birdsong can transform our mental health.</a></p>
         <p><a href='https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/'>Department of Conservation Te Papa Atawhai. (n.d.). Bird Songs and Calls.</a></p>
       </div>
       <div>
