@@ -1,5 +1,5 @@
 import React from 'react'
-import AudioPlayer from './AudioPlayer'
+import ReactAudioPlayer from 'react-audio-player'
 
 function BirdSong () {
   return (
@@ -11,7 +11,11 @@ function BirdSong () {
         <p>So, find a quiet place, close your eyes and listen to a recording of tūī and a chorus of many other birds singing in mixed bush and flowering kōwhai in magical Aotearoa.</p>
       </div>
       <div>
-
+        <ReactAudioPlayer
+          src='https://www.doc.govt.nz/globalassets/documents/conservation/native-animals/birds/bird-song/46-tui-morning-chorus.mp3'
+          autoPlay = {false}
+          controls
+        />
       </div>
     </>
   )
