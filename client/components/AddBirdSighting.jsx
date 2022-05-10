@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
-import { Button, Container } from '@mui/material'
+import { Button, Container, TextField } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility'
+import CloseIcon from '@mui/icons-material/Close'
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
 
 function AddBirdSighting () {
   const auth = useSelector((redux) => redux.auth)
@@ -13,7 +15,7 @@ function AddBirdSighting () {
   const [addEntry] = useState({ bird_id: null, location: null, user_id: null, timestamp: null })
   const [responseTextFail, setResponseTextFail] = useState(null)
   const [responseTextPass, setResponseTextPass] = useState(null)
-  const [bird, setBird] = useState('Undefined manu')
+  const [bird, setBird] = useState('UNDEFINED MANU')
   const [birdName, setBirdName] = useState('')
   const [show, setShow] = useState(false)
 
@@ -80,13 +82,13 @@ function AddBirdSighting () {
     return (
       <>
         { show ? (
-          !id ? <Select onChange={handleChange} options = {birdOptions} /> : null
+          !id ? <Select className='register' onChange={handleChange} options = {birdOptions} /> : null
         ) : (
           null) }
         <form onSubmit={handleSubmit}>
-          <input id='' type='text' value={addLocation} onChange={handleType} />
-          <input type='submit' value='Add location'/>
-          <button onClick={closeAdd}>Close</button>
+          <TextField className='register' id='' type='text' value={addLocation} onChange={handleType} />
+          <Button className='register' variant='contained' type='submit' value='add location' endIcon={<AddLocationAltIcon />} >ADD LOCATION</Button>
+          <Button className='register' variant='contained' endIcon={<CloseIcon />} onClick={closeAdd}>CLOSE</Button>
         </form>
         <p>{responseTextFail}</p>
       </>
@@ -96,7 +98,7 @@ function AddBirdSighting () {
   return (
     <div>
       <Container align='center'>
-        {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>ADD BIRD</Button> }
+        {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>SEEN A MANU? ADD IT TO YOUR SIGHTINGS</Button> }
         <p>{responseTextPass}</p>
       </Container>
     </div>
