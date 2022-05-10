@@ -22,7 +22,7 @@ This repository contains the code files for the MVP of a bird tacking applicatio
 ## What would a mature Manu Mana App feature?
 (text to be inserted) 
  
-## How to interact with the Mana Manu MVP
+## How to interact with the Manu Mana MVP
 Simply visit https://manu-mana.herokuapp.com
  
 ## Ethical considerations 
