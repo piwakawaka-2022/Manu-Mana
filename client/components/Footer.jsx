@@ -3,7 +3,8 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism'
+import AllInclusiveIcon from '@mui/icons-material/AllInclusive'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 
 export default function Footer () {
@@ -18,8 +19,8 @@ export default function Footer () {
           setValue(newValue)
         }}
       >
-        <BottomNavigationAction label="TE KAITIAKITANGA" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label=" MANU • MANA " />
+        <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} />
+        <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> }/>
         <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} />
       </BottomNavigation>
     </Box>
