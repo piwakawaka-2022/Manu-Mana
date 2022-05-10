@@ -90,7 +90,7 @@ function Map () {
           }
         </GoogleMap>
         <div className='bird-paragraph'>
-          <p> You have seen a {bird} in Poneke!</p>
+          <p> YOU HAVE SEEN A {bird} IN PŌNEKE!</p>
         </div>
       </div>
     </>

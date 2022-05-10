@@ -13,6 +13,7 @@ import { getBirdsThunk, getSightingsThunk } from '../actions/birds'
 import BirdSightingsList from './BirdSightingList'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { lightGreen, grey } from '@mui/material/colors'
+import Footer from './Footer'
 
 const theme = createTheme({
   palette: {
@@ -69,6 +70,7 @@ function App () {
           )}
         </Routes>
       </div>
+      <Footer />
     </ThemeProvider>
   )
 }

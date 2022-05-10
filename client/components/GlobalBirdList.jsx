@@ -12,8 +12,7 @@ function GlobalBirdList () {
     <> 
     
     <Container align='center'>
-      <h1>Birds you're likely to see in Poneke!</h1>
-      <Grid container>
+      <Grid container style={{ marginBottom: `20px`}}>
         {birds.map((oneBird) =><Grid align='center' key={oneBird?.id} item xs={12} sm={4} md={3}>
                                   <Paper>
                                     <GlobalBird bird={oneBird} />
