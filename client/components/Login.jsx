@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { loginUser, loginError } from '../actions/auth'
+import { Container, TextField, Button, Box } from '@mui/material'
 
 function Login () {
   const navigateTo = useNavigate()
@@ -33,31 +34,27 @@ function Login () {
   }
 
   return (
-    <form className="form box" onSubmit={handleSubmit}>
-      <section className="section has-background-white">
-        <h1 className="title is-2">Login</h1>
-      </section>
-      <hr />
-      {auth.errorMessage && (
-        <span className="has-text-danger is-large">{auth.errorMessage}</span>
-      )}
-      <label className="label is-large has-text-centered">
-        <input
+    <Container align='center'>
+      <div>
+        <Box height='100px'></Box>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <h1>LOG INTO YOUR ACCOUNT</h1>
+        <br />
+        {auth.errorMessage && (
+          <span>{auth.errorMessage}</span>
+        )}
+        <TextField className="register"
           required
-          className="input has-text-centered is-large is-fullwidth"
           placeholder="User Name"
           type="text"
           name="username"
           autoComplete="username"
           onChange={handleChange}
           value={formData.username}
-
         />
-      </label>
-      <label className="label is-large has-text-centered">
-        <input
+        <TextField className="register"
           required
-          className="input has-text-centered is-large is-fullwidth"
           placeholder="Password"
           type="password"
           name="password"
@@ -65,13 +62,19 @@ function Login () {
           onChange={handleChange}
           value={formData.password}
         />
-      </label>
-      <input
-        className="button is-large is-fullwidth is-danger"
-        value="Login"
-        type="submit"
-      />
-    </form>
+        <div>
+          <Button className="register"
+            value="Login"
+            type="submit"
+            variant='contained'>
+              LOGIN
+          </Button>
+        </div>
+      </form>
+      <div>
+        <Box height='100px'></Box>
+      </div>
+    </Container>
   )
 }
 
