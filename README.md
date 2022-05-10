@@ -1,3 +1,8 @@
+## The birth of Manu Mana 
+When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making an app to track the movements of native birds, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories about native birds that risk being lost between generations. 
+
+
+
 ## Manu Mana APP (MVP)
 
 This repository contains the code files for the MVP of a bird tacking application that takes a Te Reo Māori language first approach to biodiversity reporting by communities within Aotearoa.  The app also shares stories about the cultural and spiritual significance of Aotearoa’s native birds with reference to Māori culture. The team acknowledges that bird names and meanings vary within iwi groups across Aotearoa. Biodiversity reporting with a Te Reo Māori first approach requires careful consideration in any future iterations of the Manu Mana APP to ensure both the inclusivity and autonomy of dilectal variations of Te Reo Māori.  While learning more about the use of Te Reo Māori in biodiversity reporting, the team learned about key academic research in this area, please scroll down to view links to related research undertaken in Aotearoa.  
