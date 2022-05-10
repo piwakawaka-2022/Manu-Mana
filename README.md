@@ -1,5 +1,5 @@
 ## The birth of Manu Mana 
-When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making an app to track the movements of native birds and record them on a suburb map, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories about native birds. 
+When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making an app to track the movements of native birds and record them on a suburb map, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories about native birds. Thus the bird tracking App previously known as Flitter was reborn as Manu Mana. 
 
 
 ## Kaupapa 
