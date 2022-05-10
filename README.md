@@ -1,5 +1,5 @@
 ## The birth of Manu Mana 
-When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making an app to track the movements of native birds and record them on a suburb map, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories from Māori culture about native birds. Thus, the bird tracking app previously known as Flitter was reborn as Manu Mana. 
+When Jesse Stratford heard his classmate Halmai McRae pitch the idea of making an app to track the movements of native birds and record them on a suburb map, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories from Māori culture about native birds. Thus, the bird tracking app previously known as Flitter was reborn as Manu Mana. 
 
 
 ## Kaupapa/Purpose  
@@ -22,7 +22,7 @@ This repository contains the code files for the MVP of a bird tacking applicatio
 ## What would a mature Manu Mana App feature?
 (text to be inserted) 
  
-## How to interact with the Mana Manu MVP
+## How to interact with the Manu Mana MVP
 Simply visit https://manu-mana.herokuapp.com
  
 ## Ethical considerations 
@@ -50,7 +50,7 @@ https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
  
 ## Authors 
 ## Catlin Cummings 
-## Halmai Mcrae 
+## Halmai McRae 
 ## Sebastian Ninness
 ## Justine Pepperell
 ## Jesse Stratford
