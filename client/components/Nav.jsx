@@ -6,7 +6,7 @@ import { Button, ButtonGroup, Container } from '@mui/material'
 
 import Box from '@mui/material/Box'
 
-function Nav () {
+function Nav ({ activePage }) {
   const navigateTo = useNavigate()
   const dispatch = useDispatch()
   const auth = useSelector((redux) => redux.auth)
@@ -44,7 +44,7 @@ function Nav () {
             <>
               <ButtonGroup colour='Primary' align='right' variant='text'>
                 <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
-                <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>
+                {activePage === `/user/${auth.user.id}` ? null : <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>}
               </ButtonGroup>
             </>
           ) : (

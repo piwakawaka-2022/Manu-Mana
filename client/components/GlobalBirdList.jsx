@@ -9,6 +9,9 @@ function GlobalBirdList () {
 
   return (
     <>
+      <div>
+        <Box height='80px'></Box>
+      </div>
       <Container align='center'>
       <Box height='250px'></Box>
         <Grid container style={{ marginBottom: '20px' }}>
@@ -20,6 +23,9 @@ function GlobalBirdList () {
         </Grid>
         <Box height='250px'></Box>
       </Container>
+      <div>
+        <Box height='100px'></Box>
+      </div>
     </>
   )
 }
