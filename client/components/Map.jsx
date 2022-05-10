@@ -8,7 +8,7 @@ import { FormControl } from '@mui/material'
 function Map () {
   const dispatch = useDispatch()
   const dbMarkers = useSelector(state => state.markers)
-  const [bird, setBird] = useState('Undefined manu')
+  const [bird, setBird] = useState('UNDEFINED MANU')
   const mapRef = useRef()
   const [libraries] = useState(['places'])
   const { isLoaded } = useLoadScript({
@@ -16,19 +16,14 @@ function Map () {
     libraries
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
-  
-  let center =  { lat: -41.298493517295654, lng: 174.79978666984925 }
-  function CoordState(){
-   dbMarkers? 
-      center =  { lat: dbMarkers[dbMarkers.length -1].lat, lng: dbMarkers[dbMarkers.length -1].lng} :
-   
-      center = { lat: -41.298493517295654, lng: 174.79978666984925 }
-  
+
+  let center = { lat: -41.298493517295654, lng: 174.79978666984925 }
+  function CoordState () {
+    dbMarkers
+      ? center = { lat: dbMarkers[dbMarkers.length - 1].lat, lng: dbMarkers[dbMarkers.length - 1].lng }
+
+      : center = { lat: -41.298493517295654, lng: 174.79978666984925 }
   }
-  
-
-  
-
 
   const options = useMemo(() => ({
     mapId: '724b7195aa686651',
@@ -92,21 +87,21 @@ function Map () {
           onLoad={onLoad}
           onClick={(e) => addMarker(e.latLng.toJSON(), CoordState())}>
           { dbMarkers.map((marker) => {
-              return (
-                <Marker
-                  key={marker.id}
-                  draggable={true}
-                  position={{ lat: marker.lat, lng: marker.lng }}
-                  onDragEnd={e => marker.coords = e.latLng.toJSON()}
-                  icon="birds/MAP_ICON.png"
-                  label={{ text: marker.name, color: 'white' }}
-                />
-              )
-            })
+            return (
+              <Marker
+                key={marker.id}
+                draggable={true}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                onDragEnd={e => marker.coords = e.latLng.toJSON()}
+                icon="birds/MAP_ICON.png"
+                label={{ text: marker.name, color: 'white' }}
+              />
+            )
+          })
           }
         </GoogleMap>
         <div className='bird-paragraph'>
-          <p> YOU HAVE SEEN A {bird} IN PŌNEKE!</p>
+          <p> {`YOU HAVE SEEN A ${bird.toUpperCase()} IN PŌNEKE!`}</p>
         </div>
       </div>
     </>
