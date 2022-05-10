@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Container } from '@mui/material'
 
 function BirdSightings (props) {
   const { name, maori_name, location, bird_id, timestamp, username } = props.bird || { }
@@ -16,7 +17,7 @@ function BirdSightings (props) {
 
   return (
     <>
-      <div>
+      <Container align='center'>
         <Link to={`/birds/${bird_id}`}>
           <h2>{maori_name}</h2>
         </Link>
@@ -24,7 +25,7 @@ function BirdSightings (props) {
         <p>Date: {date} {time}</p>
         <p>Location: {location}</p>
         <p>Added by: {username}</p>
-      </div>
+      </Container>
     </>
   )
 }
