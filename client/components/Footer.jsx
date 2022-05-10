@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
@@ -21,7 +22,7 @@ export default function Footer () {
       >
         <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} />
         <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> }/>
-        <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} />
+        <Link to='/birdlist'><BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} /></Link>
       </BottomNavigation>
     </Box>
   )
