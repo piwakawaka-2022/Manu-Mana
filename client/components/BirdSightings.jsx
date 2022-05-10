@@ -20,12 +20,14 @@ function BirdSightings (props) {
     <>
       <div className='global-bird-sighting'>
               <Link to={`/birds/${bird_id}`}>
+                <div>
                 <h2>{maori_name}</h2>
-              </Link>
                 <h3>{name}</h3>
                   <p>Date: {date} {time}</p>
                   <p>Location: {location}</p>
                   <p>Added by: {username}</p>
+                 </div>
+              </Link>   
       </div>
     </>
   )
