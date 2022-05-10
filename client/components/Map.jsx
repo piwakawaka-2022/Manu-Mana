@@ -8,6 +8,7 @@ import { FormControl } from '@mui/material'
 function Map () {
   const dispatch = useDispatch()
   const dbMarkers = useSelector(state => state.markers)
+  const auth = useSelector((redux) => redux.auth)
   const [bird, setBird] = useState('UNDEFINED MANU')
   const mapRef = useRef()
   const [libraries] = useState(['places'])
@@ -72,13 +73,19 @@ function Map () {
 
   if (!isLoaded) return <div>Loading..</div>
 
-  return (
-    <>
+  const form = () => {
+    return (
       <div className='select-container'>
         <FormControl color='primary.dark' fullwidth>
           <Select onChange={handleChange} options = {birdOptions} />
         </FormControl>
       </div>
+    )
+  }
+
+  return (
+    <>
+      {auth.isAuthenticated ? form() : null }
       <div className='map-container'>
         <GoogleMap zoom={12}
           center={center}
