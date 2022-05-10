@@ -35,21 +35,21 @@ function Nav () {
       <nav>
 
         <Container align='center' colour='Primary'>
-          <ButtonGroup colour='Primary' variant='Contained'>
+          <ButtonGroup colour='Primary' variant='text'>
             <Button><Link to="/">HOME</Link></Button>
             <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>
             <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
-              <ButtonGroup colour='Primary' align='right' variant='Contained'>
+              <ButtonGroup colour='Primary' align='right' variant='text'>
                 <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
                 <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>
               </ButtonGroup>
             </>
           ) : (
             <>
-              <ButtonGroup colour='Primary' align='right' variant='Contained'>
+              <ButtonGroup colour='Primary' align='right' variant='text'>
                 <Button><Link to="/login" > LOGIN </Link></Button>
                 <Button><Link to="/register" > REGISTER </Link></Button>
               </ButtonGroup>

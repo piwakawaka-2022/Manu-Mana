@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Container, Grid, Paper } from '@mui/material'
 
 function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
   const [pages] = useState(Math.round(data.length / data.limit))
@@ -35,19 +36,26 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
   return (
     <>
       <div>
-        <h1>{title}</h1>
+   
         {/* show the posts, 10 posts at a time */}
-        <div className="dataContainer">
-          {getPaginatedData().map((d, idx) => (
-            <RenderComponent key={idx} bird={d} />
-          ))}
-        </div>
+        <Container align='center'>     
+            <h1 className='title-sightings'>{title}</h1>
+          <Grid container style={{ marginBottom: '20px' }}>
+            {getPaginatedData().map((d, idx) => <Grid align='center' key={idx} item xs={12} sm={4} md={3}>
+              <Paper>
+                <RenderComponent  key={idx} bird={d} />
+              </Paper>
+            </Grid>)}
+          </Grid>
+        </Container>
+         
 
         {/* show the pagiantion
         it consists of next and previous buttons
         along with page numbers, in our case, 5 page
         numbers at a time
-    */}
+        */}
+        <Container align='center'>
         <div className="pagination">
           {/* previous button */}
           <button
@@ -76,6 +84,7 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
         next
           </button>
         </div>
+        </Container>
       </div>
     </>
   )
