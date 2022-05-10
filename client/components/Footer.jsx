@@ -22,7 +22,7 @@ export default function Footer () {
       >
         <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} />
         <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> }/>
-        <Link to='/birdlist'><BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} /></Link>
+        <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} component={Link} to='/birdlist' />
       </BottomNavigation>
     </Box>
   )
