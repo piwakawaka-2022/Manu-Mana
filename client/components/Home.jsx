@@ -15,7 +15,7 @@ function Home () {
         <Box height='200px'></Box>
         <div className='map-select-container'>
           <div className='map-heading'>
-            {auth.isAuthenticated ? <AddBirdSighting /> : null}
+            {auth.isAuthenticated ? <AddBirdSighting /> : <p>PLEASE LOG IN TO ADD A BIRD SIGHTING</p> }
             <h3>RECENTLY SIGHTED MANU IN YOUR AREA</h3>
           </div>
           <Map />
