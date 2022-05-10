@@ -19,6 +19,7 @@ body{
 }
 
 .map-container{
+  margin-top: 20px;
   height: 80%;
   width: 80%
 }
@@ -30,6 +31,24 @@ body{
 .global-bird{
   color: lightgrey;
   background-color: black;
+}
+
+.global-bird-sighting{
+  color: lightgrey;
+  background-color: black;
+}
+
+.global-bird-sighting:hover{
+  background-color: #616161;
+}
+
+.title-sightings{
+  margin-top: 25vh;
+  margin-bottom: 15vh;
+}
+
+.pagination{
+  margin: 15vh
 }
 
 .global-bird img{
@@ -44,6 +63,14 @@ body{
   background-color: #616161;
 }
 
+.MuiBottomNavigation-root {
+  background-color: black;
+  color: white;
+}
+
+.css-c8ii97-MuiButtonBase-root-MuiBottomNavigationAction-root {
+  color: white;
+}
 .register {
   background-color: white;
 }

@@ -13,6 +13,7 @@ function GlobalBirdList () {
         <Box height='80px'></Box>
       </div>
       <Container align='center'>
+      <Box height='250px'></Box>
         <Grid container style={{ marginBottom: '20px' }}>
           {birds.map((oneBird) => <Grid align='center' key={oneBird?.id} item xs={12} sm={4} md={3}>
             <Paper>
@@ -20,6 +21,7 @@ function GlobalBirdList () {
             </Paper>
           </Grid>)}
         </Grid>
+        <Box height='250px'></Box>
       </Container>
       <div>
         <Box height='100px'></Box>

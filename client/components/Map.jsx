@@ -16,8 +16,19 @@ function Map () {
     libraries
   })
   const onLoad = useCallback((map) => (mapRef.current = map), [])
+  
+  let center =  { lat: -41.298493517295654, lng: 174.79978666984925 }
+  function CoordState(){
+   dbMarkers? 
+      center =  { lat: dbMarkers[dbMarkers.length -1].lat, lng: dbMarkers[dbMarkers.length -1].lng} :
+   
+      center = { lat: -41.298493517295654, lng: 174.79978666984925 }
+  
+  }
+  
 
-  const center = { lat: -41.298493517295654, lng: 174.79978666984925 }
+  
+
 
   const options = useMemo(() => ({
     mapId: '724b7195aa686651',
@@ -38,7 +49,13 @@ function Map () {
     { value: 'Karearea', label: 'Karearea' },
     { value: 'Yellowhead', label: 'Yellowhead' },
     { value: 'Kākāriki', label: 'Kākāriki' },
-    { value: 'Pūtangitangi', label: 'Pūtangitangi' }
+    { value: 'Pūtangitangi', label: 'Pūtangitangi' },
+    { value: 'Toutouwai', label: 'Toutouwai' },
+    { value: 'Pūkeko', label: 'Pūkeko' },
+    { value: 'Kākāpō', label: 'Kākāpō' },
+    { value: 'Takahē', label: 'Takahē' },
+    { value: 'Whio', label: 'Whio' },
+    { value: 'Mātātā', label: 'Mātātā' }
   ]
 
   function handleChange (evt) {
@@ -73,7 +90,7 @@ function Map () {
           mapContainerClassName="map"
           options={options}
           onLoad={onLoad}
-          onClick={(e) => addMarker(e.latLng.toJSON())}>
+          onClick={(e) => addMarker(e.latLng.toJSON(), CoordState())}>
           { dbMarkers.map((marker) => {
               return (
                 <Marker
@@ -81,8 +98,8 @@ function Map () {
                   draggable={true}
                   position={{ lat: marker.lat, lng: marker.lng }}
                   onDragEnd={e => marker.coords = e.latLng.toJSON()}
-                  icon="birds/bird.png"
-                  label={{ text: marker.name, color: '#FFFFFF' }}
+                  icon="birds/MAP_ICON.png"
+                  label={{ text: marker.name, color: 'white' }}
                 />
               )
             })

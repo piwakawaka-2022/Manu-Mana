@@ -35,23 +35,23 @@ function Nav ({ activePage }) {
       <nav>
 
         <Container align='center' colour='Primary'>
-          <ButtonGroup colour='Primary' variant='Contained'>
-            {activePage === '/' ? null : <Button><Link to='/'>HOME</Link></Button>}
-            {activePage === '/birdlist' ? null : <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>}
-            {activePage === '/bird-database' ? null : <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>}
+          <ButtonGroup colour='Primary' variant='text'>
+            <Button><Link to="/">HOME</Link></Button>
+            <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>
+            <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
-              <ButtonGroup colour='Primary' align='right' variant='Contained'>
+              <ButtonGroup colour='Primary' align='right' variant='text'>
                 <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
                 {activePage === `/user/${auth.user.id}` ? null : <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>}
               </ButtonGroup>
             </>
           ) : (
             <>
-              <ButtonGroup colour='Primary' align='right' variant='Contained'>
-                {activePage === '/login' ? null : <Button><Link to="/login" > LOGIN </Link></Button>}
-                {activePage === '/register' ? null : <Button><Link to="/register" > REGISTER </Link></Button>}
+              <ButtonGroup colour='Primary' align='right' variant='text'>
+                <Button><Link to="/login" > LOGIN </Link></Button>
+                <Button><Link to="/register" > REGISTER </Link></Button>
               </ButtonGroup>
             </>
           )}
