@@ -36,9 +36,9 @@ function Nav ({ activePage }) {
 
         <Container align='center' colour='Primary'>
           <ButtonGroup colour='Primary' variant='text'>
-            <Button><Link to="/">HOME</Link></Button>
-            <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>
-            <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>
+            {activePage === '/' ? null : <Button><Link to='/'>HOME</Link></Button>}
+            {activePage === '/birdlist' ? null : <Button><Link to='/birdlist' className=''> RECENT BIRD SIGHTINGS</Link></Button>}
+            {activePage === '/bird-database' ? null : <Button><Link to='/bird-database'> BIRDS YOU ARE LIKELY TO SEE IN PŌNEKE </Link></Button>}
           </ButtonGroup>
           {auth.isAuthenticated ? (
             <>
