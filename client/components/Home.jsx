@@ -12,7 +12,7 @@ function Home () {
   return (
     <>
       <Container align='center'>
-        <Box height='250px'></Box>
+        <Box height='200px'></Box>
         <div className='map-select-container'>
           <div className='map-heading'>
             {auth.isAuthenticated ? <AddBirdSighting /> : null}
@@ -21,12 +21,12 @@ function Home () {
           <Map />
         </div>
         <div>
-          <Box height='250px'></Box>
+          <Box height='200px'></Box>
           <MasonryImageList/>
         </div>
       </Container>
       <div>
-        <Box height='250px'></Box>
+        <Box height='200px'></Box>
       </div>
     </>
   )
