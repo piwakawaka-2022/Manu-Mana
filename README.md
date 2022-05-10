@@ -50,7 +50,7 @@ https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
  
 ## Authors 
 ## Catlin Cummings 
-## Halmai Mcrae 
+## Halmai McRae 
 ## Sebastian Ninness
 ## Justine Pepperell
 ## Jesse Stratford
