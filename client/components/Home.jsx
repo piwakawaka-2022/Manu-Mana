@@ -21,7 +21,7 @@ function Home () {
           <Map />
         </div>
         <div>
-        <Box height='250px'></Box>
+          <Box height='250px'></Box>
           <MasonryImageList/>
         </div>
       </Container>
