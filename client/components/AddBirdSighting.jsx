@@ -98,7 +98,7 @@ function AddBirdSighting () {
   return (
     <div>
       <Container align='center'>
-        {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>SEEN THIS MANU? ADD IT TO YOUR SIGHTINGS</Button> }
+        {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>SEEN A MANU? ADD IT TO YOUR SIGHTINGS</Button> }
         <p>{responseTextPass}</p>
       </Container>
     </div>
