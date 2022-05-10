@@ -7,13 +7,10 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism'
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
-import { StyledEngineProvider } from '@mui/material/styles';
-
-
+import { StyledEngineProvider } from '@mui/material/styles'
 
 export default function Footer () {
   const [value, setValue] = React.useState(0)
- 
 
   return (
     <StyledEngineProvider injectFirst>
@@ -27,7 +24,7 @@ export default function Footer () {
         >
           <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} />
           <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> }/>
-          <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} />
+          <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} component={Link} to='/birdlist' />
         </BottomNavigation>
       </Box>
     </StyledEngineProvider>
