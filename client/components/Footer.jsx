@@ -22,8 +22,8 @@ export default function Footer () {
             setValue(newValue)
           }}
         >
-          <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} />
-          <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> }/>
+          <BottomNavigationAction label="TE KAITIAKITANGA" icon={<VolunteerActivismIcon />} component={Link} to='/tekaitiakitanga'/>
+          <BottomNavigationAction label=" MANU • MANA " icon={<AllInclusiveIcon/> } component={Link} to='/'/>
           <BottomNavigationAction label="RECENT SIGHTINGS" icon={<LocationOnIcon />} component={Link} to='/birdlist' />
         </BottomNavigation>
       </Box>

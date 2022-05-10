@@ -14,6 +14,7 @@ import BirdSightingsList from './BirdSightingList'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { lightGreen, grey } from '@mui/material/colors'
 import Footer from './Footer'
+import About from './About'
 
 const theme = createTheme({
   palette: {
@@ -59,7 +60,8 @@ function App () {
           <Route path="/" element={<Home />} />
           <Route path="/birdlist" element={<BirdSightingsList />} />
           <Route path='/bird-database' element={<GlobalBirdList />} />
-          <Route path='/birds/:id'element={<Bird />} />
+          <Route path='/birds/:id' element={<Bird />} />
+          <Route path='/tekaitiakitanga' element={<About />} />
           {!auth.isAuthenticated && (
             <>
               <Route path="/login" element={<Login />} />
