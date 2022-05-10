@@ -105,9 +105,9 @@ const itemData = [
   {
     img: './birds/kukupa-kereru.png',
     title: 'Kereru'
+  },
+  {
+    img: './birds/tawaki.png',
+    title: 'Tawaki'
   }
-  // {
-  //   img: './birds/ruru-morepork.png',
-  //   title: 'Ruru'
-  // }
 ]
