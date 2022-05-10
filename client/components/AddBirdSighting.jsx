@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
-import { Button } from '@mui/material'
+import { Button, Container } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 
 function AddBirdSighting () {
@@ -95,8 +95,10 @@ function AddBirdSighting () {
 
   return (
     <div>
-      {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>ADD BIRD</Button> }
-      <p>{responseTextPass}</p>
+      <Container align='center'>
+        {show ? renderAddBirdSighting() : <Button variant='contained' endIcon={<VisibilityIcon />} onClick={showAdd}>ADD BIRD</Button> }
+        <p>{responseTextPass}</p>
+      </Container>
     </div>
   )
 }
