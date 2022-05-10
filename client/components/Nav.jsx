@@ -18,20 +18,20 @@ function Nav () {
 
   return (
     <>
-      <Box
-        sx={{
-          width: '100%',
-          height: '55vw',
-          backgroundImage: `url(${'./birds/MANA_MANU_BANNER.png'})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          textAlign: 'center',
-          '&:hover': {
-            backgroundColor: 'primary.main',
-            opacity: [0.9, 0.8, 0.7]
-          }
-        }}
-      />
+    <Box
+      sx={{
+        width: `100%`,
+        height: `55vw`,
+        backgroundImage: `url(${'birds/MANA_MANU_BANNER.png'})` ,
+        backgroundRepeat: `no-repeat`,
+        backgroundSize: `cover`,
+        textAlign: `center`,
+        '&:hover': {
+          backgroundColor: 'primary.main',
+          opacity: [0.9, 0.8, 0.7],
+        },
+      }}
+    />
       <nav>
 
         <Container align='center' colour='Primary'>
