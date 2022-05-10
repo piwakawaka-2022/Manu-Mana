@@ -17,7 +17,7 @@ Simply visit https://manu-mana.herokuapp.com
  
 ## Ethical considerations 
 
-Māori language and cultural stories are toanga, that must be treated with care and consideration. 
+Māori language and cultural stories are toanga that should be treated with care and consideration. 
 Furthermore, Māori Data Sovereignty, must be considered in Aotearoa: “New Zealand is one of the few countries in the world that has adopted a whole-of-government approach to safeguarding Māori cultural heritage. In 2020, the Waitangi Tribunal – a permanent inquiry into the treatment of the Maori people – advised data should be included in this heritage.” Sources:https://techmonitor.ai/policy/privacy-and-data-protection/maori-data-sovereignty-new-zealand-indigenous
   
  
