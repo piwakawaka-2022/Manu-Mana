@@ -2,9 +2,9 @@
 When Jesse Stratford heard his classmate Halmai Mcrae pitch the idea of making an app to track the movements of native birds and record them on a suburb map, he was reminded of his mother’s stories about the cultural significance of pīwakawaka.  Jesse felt a longing to know more about the cultural and spiritual significance of birds in his Māori culture. With this thought in mind, he suggested that the app could also share and capture stories about native birds. Thus the bird tracking app previously known as Flitter was reborn as Manu Mana. 
 
 
-## Kaupapa 
-Manu Mana is more than a web application: the project is about beautiful design, protecting taonga, relationships, and learning in a digital age.
-It is also an exploration of what it means to be an ethical technologist working in Aotearoa. 
+## Kaupapa/Purpose  
+Manu Mana is more than a web application: the project is about design, protecting taonga, relationships, and learning in a digital age.
+It is also an exploration of what it means to be an ethical technologist working in bicultural Aotearoa. 
 
 
 
