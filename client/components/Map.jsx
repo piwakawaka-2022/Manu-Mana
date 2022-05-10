@@ -88,21 +88,21 @@ function Map () {
           onLoad={onLoad}
           onClick={(e) => mapClick(e)}>
           { dbMarkers.map((marker) => {
-              return (
-                <Marker
-                  key={marker.id}
-                  draggable={true}
-                  position={{ lat: marker.lat, lng: marker.lng }}
-                  onDragEnd={e => marker.coords = e.latLng.toJSON()}
-                  icon="birds/MAP_ICON.png"
-                  label={{ text: marker.name, color: 'white' }}
-                />
-              )
-            })
+            return (
+              <Marker
+                key={marker.id}
+                draggable={true}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                onDragEnd={e => marker.coords = e.latLng.toJSON()}
+                icon="birds/MAP_ICON.png"
+                label={{ text: marker.name, color: 'white' }}
+              />
+            )
+          })
           }
         </GoogleMap>
         <div className='bird-paragraph'>
-          <p> YOU HAVE SEEN A {bird} IN PŌNEKE!</p>
+          <p> {`YOU HAVE SEEN A ${bird.toUpperCase()} IN PŌNEKE!`}</p>
         </div>
       </div>
     </>
