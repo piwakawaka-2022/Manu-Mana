@@ -8,7 +8,7 @@ function BirdSightings (props) {
   const date = new Date(timestamp).toDateString()
   let hours = new Date(timestamp).getHours()
   let minutes = new Date(timestamp).getMinutes()
-  const amOrPm = hours <= 12 ? 'pm' : 'am'
+  const amOrPm = hours <= 12 ? 'PM' : 'AM'
 
   hours = (hours % 12) || 12
   minutes = minutes < 10 ? '0' + minutes : minutes
@@ -20,11 +20,11 @@ function BirdSightings (props) {
       <div className='global-bird-sighting'>
         <Link to={`/birds/${bird_id}`}>
           <div>
-            <h2>{maori_name}</h2>
-            <h3>{name}</h3>
-            <p>Date: {date} {time}</p>
-            <p>Location: {location}</p>
-            <p>Added by: {username}</p>
+            <h2>{maori_name.toUpperCase()}</h2>
+            <h3>{name.toUpperCase()}</h3>
+            <p>DATE: {date.toUpperCase()} {time.toUpperCase()}</p>
+            <p>LOCATION: {location.toUpperCase()}</p>
+            <p>ADDED BY: {username.toUpperCase()}</p>
           </div>
         </Link>
       </div>

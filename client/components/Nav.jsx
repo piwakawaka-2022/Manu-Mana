@@ -44,8 +44,8 @@ function Nav ({ activePage }) {
           {auth.isAuthenticated ? (
             <>
               <ButtonGroup colour='Primary' align='right' variant='text'>
-                <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
                 {activePage === `/user/${auth.user.id}` ? null : <Button><Link to={`/user/${auth.user.id}`}> YOUR BIRD SIGHTINGS </Link></Button>}
+                <Button><Link to="/" className="navbar-item is-large" onClick={logout}>Logout</Link></Button>
               </ButtonGroup>
             </>
           ) : (
