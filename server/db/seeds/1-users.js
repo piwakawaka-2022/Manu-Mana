@@ -18,7 +18,7 @@ const replacePasswordWithHash = (user) => {
 const fakeUserData = [
   {
     id: 1,
-    username: 'admin',
+    username: 'Adam',
     password: 'Krang',
     email_address: 'hello@devacademy.co.nz',
     contact_details: 'Ring the bell ;)',
