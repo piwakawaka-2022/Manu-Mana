@@ -3,7 +3,7 @@ import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveMarkersThunk, fetchMarkers } from '../actions/markers'
-import { FormControl, Container } from '@mui/material'
+import { FormControl } from '@mui/material'
 import { StyledEngineProvider } from '@mui/material/styles'
 
 function Map () {
@@ -14,7 +14,7 @@ function Map () {
   const [bird, setBird] = useState('UNDEFINED MANU')
   const [coord, setCoord] = useState({ lat: -41.298493517295654, lng: 174.79978666984925 })
   const [libraries] = useState(['places'])
-  
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyDnGHfALAyWDscmt2LcSwTTrG6SMHpUFsU',
     libraries
@@ -22,8 +22,8 @@ function Map () {
   const onLoad = useCallback((map) => (mapRef.current = map), [])
 
   useEffect(() => {
-        dispatch(fetchMarkers())
-      }, [])  
+    dispatch(fetchMarkers())
+  }, [])
 
   const options = useMemo(() => ({
     mapId: '724b7195aa686651',
@@ -75,11 +75,11 @@ function Map () {
 
   return (
     <>
-    <StyledEngineProvider injectFirst>
+      <StyledEngineProvider injectFirst>
         <FormControl color='primary' variant="filled" fullwidth="true">
           <Select onChange={handleChange} options = {birdOptions} />
         </FormControl>
-    </StyledEngineProvider>
+      </StyledEngineProvider>
       <div className='map-container'>
         <GoogleMap zoom={12}
           center={coord}
