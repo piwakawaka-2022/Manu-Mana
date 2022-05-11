@@ -7,10 +7,11 @@ function BirdSightings (props) {
 
   const date = new Date(timestamp).toDateString()
   let hours = new Date(timestamp).getHours()
-  const minutes = new Date(timestamp).getMinutes()
-  const amOrPm = hours >= 12 ? 'pm' : 'am'
+  let minutes = new Date(timestamp).getMinutes()
+  const amOrPm = hours <= 12 ? 'pm' : 'am'
 
   hours = (hours % 12) || 12
+  minutes = minutes < 10 ? '0' + minutes : minutes
 
   const time = `${hours}:${minutes} ${amOrPm}`
 
