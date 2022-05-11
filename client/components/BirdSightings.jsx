@@ -6,14 +6,16 @@ function BirdSightings (props) {
   const { name, maori_name, location, bird_id, timestamp, username } = props.bird || { }
 
   const date = new Date(timestamp).toDateString()
-  let hours = new Date(timestamp).getHours()
+  const hours = new Date(timestamp).getHours()
   let minutes = new Date(timestamp).getMinutes()
-  const amOrPm = hours <= 12 ? 'PM' : 'AM'
 
-  hours = (hours % 12) || 12
+  console.log(hours)
+  const amOrPm = hours <= 12 ? 'AM' : 'PM'
+  const adjustHours = hours < 12 ? hours : hours % 12
+
   minutes = minutes < 10 ? '0' + minutes : minutes
 
-  const time = `${hours}:${minutes} ${amOrPm}`
+  const time = `${adjustHours}:${minutes} ${amOrPm}`
 
   return (
     <>
@@ -22,7 +24,7 @@ function BirdSightings (props) {
           <div>
             <h2>{maori_name.toUpperCase()}</h2>
             <h3>{name.toUpperCase()}</h3>
-            <p>DATE: {date.toUpperCase()} {time.toUpperCase()}</p>
+            <p>DATE: {date.toUpperCase()} {time}</p>
             <p>LOCATION: {location.toUpperCase()}</p>
             <p>ADDED BY: {username.toUpperCase()}</p>
           </div>
