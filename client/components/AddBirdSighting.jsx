@@ -91,6 +91,7 @@ function AddBirdSighting () {
           !id ? <FormControl color='primary' variant="filled"><Select className='register' onChange={handleChange} options={birdOptions} placeholder='SELECT MANU' /></FormControl> : null
         ) : (
           null) }
+        <Box height='10px'></Box>
         <form onSubmit={handleSubmit}>
           <TextField className='register' id='' type='text' text-size='medium' placeholder="TELL US WHERE..." value={addLocation} onChange={handleType} />
           <div>
