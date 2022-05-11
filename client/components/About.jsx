@@ -12,14 +12,14 @@ function About () {
       <Typography gutterBottom>
       MĀORI BELIEVE IN AND RECOGNISE THE DEEP KINSHIP BETWEEN HUMANS AND THE NATURAL WORLD. THIS CONNECTION IS EXPRESSED THROUGH KAITIAKITANGA - A WAY OF MANAGING AND PROTECTING THE ENVIRONMENT.
       </Typography>
-      <Box height='10px'></Box>
+      <Box height='90px'></Box>
       <Typography variant='h4' gutterBottom>
           KAUPAPA/PURPOSE
       </Typography>
       <Typography gutterBottom>
         MANU MANA IS MORE THAN A WEB APPLICATION: THE PROJECT IS ABOUT DESIGN, PROTECTING TAONGA, RELATIONSHIPS, AND LEARNING IN A DIGITAL AGE. IT IS ALSO AN EXPLORATION OF WHAT IT MEANS TO BE AN ETHICAL TECHNOLOGIST WORKING IN BICULTURAL AOTEAROA.
       </Typography>
-      <Box height='10px'></Box>
+      <Box height='90px'></Box>
       <Typography variant='h4' gutterBottom>
           ETHICAL CONSIDERATIONS
       </Typography>
@@ -27,12 +27,11 @@ function About () {
           MĀORI LANGUAGE AND CULTURAL STORIES ARE TOANGA THAT SHOULD BE TREATED WITH CARE AND CONSIDERATION. FURTHERMORE, MĀORI DATA SOVEREIGNTY, MUST BE CONSIDERED IN AOTEAROA: “NEW ZEALAND IS ONE OF THE FEW COUNTRIES IN THE WORLD THAT HAS ADOPTED A WHOLE-OF-GOVERNMENT APPROACH TO SAFEGUARDING MĀORI CULTURAL HERITAGE. IN 2020, THE WAITANGI TRIBUNAL - A PERMANENT INQUIRY INTO THE TREATMENT OF THE MAORI PEOPLE - ADVISED DATA SHOULD BE INCLUDED IN THIS HERITAGE.” SOURCE: <a href='https://techmonitor.ai/policy/privacy-and-data-protection/maori-data-sovereignty-new-zealand-indigenous'>MĀORI DATA SOVEREIGNTY.
         </a>
       </Typography>
-      <Box height='10px'></Box>
+      <Box height='90px'></Box>
       <Typography variant='h4' gutterBottom>
           RESOURCES USED IN MANU MANA
       </Typography>
       <Typography gutterBottom>
-        <p>USE OF TE REO MĀORI IN BIODIVERSITY REPORTING AND ASSOCIATED WEB APPLICATIONS:</p>
         <p>USE OF TE REO MĀORI IN BIODIVERSITY REPORTING AND ASSOCIATED WEB APPLICATIONS:</p>
         <p><a href='https://www.jstor.org/stable/26841830'>WEHI, P. M., CARTER, L., HARAWIRA, T. W., FITZGERALD, G., LLOYD, K., WHAANGA, H., &AMP; MACLEOD, C. J. (2019). ENHANCING AWARENESS AND ADOPTION OF CULTURAL VALUES THROUGH USE OF MĀORI BIRD NAMES IN SCIENCE COMMUNICATION AND ENVIRONMENTAL REPORTING. NEW ZEALAND JOURNAL OF ECOLOGY, 43(3), 1-9.</a></p>
         <p>BIRD PHOTOS:</p>
@@ -43,7 +42,7 @@ function About () {
         <p><a href='https://www.nhm.ac.uk/discover/how-listening-to-bird-song-can-transform-our-mental-health.html'>HOW LISTENING TO A BIRDSONG CAN TRANSFORM OUR MENTAL HEALTH.</a></p>
         <p><a href='https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/'>DEPARTMENT OF CONSERVATION TE PAPA ATAWHAI. (N.D.). BIRD SONGS AND CALLS.</a></p>
       </Typography>
-      <Box height='10px'></Box>
+      <Box height='80px'></Box>
       <Typography variant='h4' gutterBottom>
         AUTHORS
       </Typography>

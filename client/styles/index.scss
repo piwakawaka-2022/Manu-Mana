@@ -106,3 +106,16 @@ body{
 .bird-container {
   margin: 0vw 8vw;
 }
+
+.global-bird-link {
+  padding: 50px;
+  background-color: black;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.global-bird-link:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
