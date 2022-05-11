@@ -38,7 +38,6 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
   return (
     <>
       <div>
-        {/* show the posts, 10 posts at a time */}
         <Container align='center'>
           <h1 className='title-sightings'>{title}</h1>
           <Grid container style={{ marginBottom: '20px' }}>
@@ -49,14 +48,8 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
             </Grid>)}
           </Grid>
         </Container>
-        {/* show the pagiantion
-        it consists of next and previous buttons
-        along with page numbers, in our case, 5 page
-        numbers at a time
-        */}
         <Container align='center'>
           <div className="pagination">
-            {/* previous button */}
             <Button startIcon={<NavigateBeforeIcon />}
               onClick={goToPreviousPage}
               className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
@@ -64,7 +57,6 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
         PREV
             </Button>
 
-            {/* show page numbers */}
             {getPaginationGroup().map((item, index) => (
               <Button
                 key={index}
@@ -75,7 +67,6 @@ function Pagination ({ data, RenderComponent, title, pageLimit, dataLimit }) {
               </Button>
             ))}
 
-            {/* next button */}
             <Button endIcon={<NavigateNextIcon />}
               onClick={goToNextPage}
               className={`next ${currentPage === pages ? 'disabled' : ''}`}
