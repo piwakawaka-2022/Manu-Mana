@@ -63,25 +63,25 @@ function AddBirdSighting () {
   const closeAdd = () => setShow(false)
 
   const birdOptions = [
-    { value: 'KAKA', label: 'KAKA' },
-    { value: 'PIWAKAWAKA', label: 'PIWAKAWAKA' },
-    { value: 'KERERŪ', label: 'KERERŪ' },
-    { value: 'RURŪ', label: 'RURŪ' },
-    { value: 'KŌKAKO', label: 'KŌKAKO' },
-    { value: 'KORIMAKO', label: 'KORIMAKO' },
-    { value: 'KŌTARE', label: 'KŌTARE' },
-    { value: 'TŪĪ', label: 'TŪĪ' },
-    { value: 'KEA', label: 'KEA' },
-    { value: 'KAREAREA', label: 'KAREAREA' },
-    { value: 'MOHUA', label: 'MOHUA' },
-    { value: 'KĀKĀRIKI', label: 'KĀKĀRIKI' },
-    { value: 'PŪTANGITANGI', label: 'PŪTANGITANGI' },
-    { value: 'TOUTOUWAI', label: 'TOUTOUWAI' },
-    { value: 'PŪKEKO', label: 'PŪKEKO' },
-    { value: 'KĀKĀPŌ', label: 'KĀKĀPŌ' },
-    { value: 'TAKAHĒ', label: 'TAKAHĒ' },
-    { value: 'WHIO', label: 'WHIO' },
-    { value: 'MĀTĀTĀ', label: 'MĀTĀTĀ' }
+    { value: 10, label: 'KAKA' },
+    { value: 8, label: 'PIWAKAWAKA' },
+    { value: 6, label: 'KERERŪ' },
+    { value: 1, label: 'RURŪ' },
+    { value: 2, label: 'KŌKAKO' },
+    { value: 3, label: 'KORIMAKO' },
+    { value: 4, label: 'KŌTARE' },
+    { value: 5, label: 'TŪĪ' },
+    { value: 7, label: 'KEA' },
+    { value: 9, label: 'KAREAREA' },
+    { value: 11, label: 'MOHUA' },
+    { value: 12, label: 'KĀKĀRIKI' },
+    { value: 13, label: 'PŪTANGITANGI' },
+    { value: 14, label: 'TOUTOUWAI' },
+    { value: 15, label: 'PŪKEKO' },
+    { value: 17, label: 'KĀKĀPŌ' },
+    { value: 18, label: 'TAKAHĒ' },
+    { value: 19, label: 'WHIO' },
+    { value: 20, label: 'MĀTĀTĀ' }
   ]
 
   const renderAddBirdSighting = () => {
