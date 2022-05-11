@@ -1,43 +1,61 @@
 import React from 'react'
+import { Container, Typography, Box, Button } from '@mui/material'
+import GitHubIcon from '@mui/icons-material/GitHub'
 
 function About () {
   return (
-    <div>
-      <div>
-        <h1>Kaitiakitanga</h1>
-        <p>
-            Maori believe in and recognise the deep kinship between humans and the natural world. This connection is expressed through kaitiakitanga - a way of managing the environment.
-        </p>
-      </div>
-      <div>
-        <h2>Kaupapa/Purpose</h2>
-        <p>Manu Mana is more than a web application: the project is about design, protecting taonga, relationships, and learning in a digital age. It is also an exploration of what it means to be an ethical technologist working in bicultural Aotearoa.</p>
-      </div>
-      <div>
-        <h2>Ethical Considerations</h2>
-        <p>Māori language and cultural stories are toanga that should be treated with care and consideration. Furthermore, Māori Data Sovereignty, must be considered in Aotearoa: “New Zealand is one of the few countries in the world that has adopted a whole-of-government approach to safeguarding Māori cultural heritage. In 2020, the Waitangi Tribunal - a permanent inquiry into the treatment of the Maori people - advised data should be included in this heritage.” Source: <a href='https://techmonitor.ai/policy/privacy-and-data-protection/maori-data-sovereignty-new-zealand-indigenous'>Māori data sovereignty</a></p>
-      </div>
-      <div>
-        <h2>Resources used in Manu Mana</h2>
-        <h3>Use of Te Reo Māori in biodiversity reporting and associated web applications</h3>
-        <p><a href='https://www.jstor.org/stable/26841830'>Wehi, P. M., Carter, L., Harawira, T. W., Fitzgerald, G., Lloyd, K., Whaanga, H., &amp; MacLeod, C. J. (2019). Enhancing awareness and adoption of cultural values through use of Māori bird names in science communication and environmental reporting. New Zealand Journal of Ecology, 43(3), 1-9.</a></p>
-        <h3>Bird photos</h3>
-        <p><a href='https://www.birdoftheyear.org.nz/'>Forest and Bird Te reo o te taiao/Bird of the year 2021.</a></p>
-        <h3>Physical descriptions of birds</h3>
-        <p><a href='https://wellingtongardens.nz/assets/Documents/5412aa5a11/J008421-Botanic-Gardens-Bird-Brochure-WEB.pdf'>Data.govt.nz Botanic Gardens Bird Brochure.</a></p>
-        <h3>Bird song</h3>
-        <p><a href='https://www.nhm.ac.uk/discover/how-listening-to-bird-song-can-transform-our-mental-health.html'>How listening to a birdsong can transform our mental health.</a></p>
-        <p><a href='https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/'>Department of Conservation Te Papa Atawhai. (n.d.). Bird Songs and Calls.</a></p>
-      </div>
-      <div>
-        <h2>Authors</h2>
-        <p>Cat Cummings - Product Lead/SCRUM Lead</p>
-        <p>Halmai McRae - Wellbeing Champion</p>
-        <p>Seb Ninness - External Technologies Lead</p>
-        <p>Justine Pepperell - Front End Facilitator</p>
-        <p>Jesse Stratford - Design Lead</p>
-      </div>
-    </div>
+    <Container align='center' fixed>
+      <Box height='100px'></Box>
+      <Typography variant='h4' gutterBottom>
+        KAITIAKITANGA
+      </Typography>
+      <Typography gutterBottom>
+      MĀORI BELIEVE IN AND RECOGNISE THE DEEP KINSHIP BETWEEN HUMANS AND THE NATURAL WORLD. THIS CONNECTION IS EXPRESSED THROUGH KAITIAKITANGA - A WAY OF MANAGING AND PROTECTING THE ENVIRONMENT.
+      </Typography>
+      <Box height='10px'></Box>
+      <Typography variant='h4' gutterBottom>
+          KAUPAPA/PURPOSE
+      </Typography>
+      <Typography gutterBottom>
+        MANU MANA IS MORE THAN A WEB APPLICATION: THE PROJECT IS ABOUT DESIGN, PROTECTING TAONGA, RELATIONSHIPS, AND LEARNING IN A DIGITAL AGE. IT IS ALSO AN EXPLORATION OF WHAT IT MEANS TO BE AN ETHICAL TECHNOLOGIST WORKING IN BICULTURAL AOTEAROA.
+      </Typography>
+      <Box height='10px'></Box>
+      <Typography variant='h4' gutterBottom>
+          ETHICAL CONSIDERATIONS
+      </Typography>
+      <Typography gutterBottom>
+          MĀORI LANGUAGE AND CULTURAL STORIES ARE TOANGA THAT SHOULD BE TREATED WITH CARE AND CONSIDERATION. FURTHERMORE, MĀORI DATA SOVEREIGNTY, MUST BE CONSIDERED IN AOTEAROA: “NEW ZEALAND IS ONE OF THE FEW COUNTRIES IN THE WORLD THAT HAS ADOPTED A WHOLE-OF-GOVERNMENT APPROACH TO SAFEGUARDING MĀORI CULTURAL HERITAGE. IN 2020, THE WAITANGI TRIBUNAL - A PERMANENT INQUIRY INTO THE TREATMENT OF THE MAORI PEOPLE - ADVISED DATA SHOULD BE INCLUDED IN THIS HERITAGE.” SOURCE: <a href='https://techmonitor.ai/policy/privacy-and-data-protection/maori-data-sovereignty-new-zealand-indigenous'>MĀORI DATA SOVEREIGNTY.
+        </a>
+      </Typography>
+      <Box height='10px'></Box>
+      <Typography variant='h4' gutterBottom>
+          RESOURCES USED IN MANU MANA
+      </Typography>
+      <Typography gutterBottom>
+        <p>USE OF TE REO MĀORI IN BIODIVERSITY REPORTING AND ASSOCIATED WEB APPLICATIONS:</p>
+        <p>USE OF TE REO MĀORI IN BIODIVERSITY REPORTING AND ASSOCIATED WEB APPLICATIONS:</p>
+        <p><a href='https://www.jstor.org/stable/26841830'>WEHI, P. M., CARTER, L., HARAWIRA, T. W., FITZGERALD, G., LLOYD, K., WHAANGA, H., &AMP; MACLEOD, C. J. (2019). ENHANCING AWARENESS AND ADOPTION OF CULTURAL VALUES THROUGH USE OF MĀORI BIRD NAMES IN SCIENCE COMMUNICATION AND ENVIRONMENTAL REPORTING. NEW ZEALAND JOURNAL OF ECOLOGY, 43(3), 1-9.</a></p>
+        <p>BIRD PHOTOS:</p>
+        <p><a href='https://www.birdoftheyear.org.nz/'>FOREST AND BIRD TE REO O TE TAIAO/BIRD OF THE YEAR 2021.</a></p>
+        <p>PHYSICAL DESCRIPTIONS OF BIRDS:</p>
+        <a href='https://wellingtongardens.nz/assets/documents/5412aa5a11/j008421-botanic-gardens-bird-brochure-web.pdf'>DATA.GOVT.NZ BOTANIC GARDENS BIRD BROCHURE.</a>
+        <p>BIRD SONG:</p>
+        <p><a href='https://www.nhm.ac.uk/discover/how-listening-to-bird-song-can-transform-our-mental-health.html'>HOW LISTENING TO A BIRDSONG CAN TRANSFORM OUR MENTAL HEALTH.</a></p>
+        <p><a href='https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/'>DEPARTMENT OF CONSERVATION TE PAPA ATAWHAI. (N.D.). BIRD SONGS AND CALLS.</a></p>
+      </Typography>
+      <Box height='10px'></Box>
+      <Typography variant='h4' gutterBottom>
+        AUTHORS
+      </Typography>
+      <Typography gutterBottom>
+        <p><Button variant='link' startIcon={<GitHubIcon />} href="https://github.com/cat-cummings">CAT CUMMINGS - PRODUCT LEAD/SCRUM LEAD</Button></p>
+        <p><Button variant='link' startIcon={<GitHubIcon />} href="https://github.com/halmai-mcrae">  HALMAI MCRAE - WELLBEING CHAMPION/BACK END LEAD</Button></p>
+        <p><Button variant='link' startIcon={<GitHubIcon />} href="https://github.com/seb-ninness"> SEB NINNESS - EXTERNAL TECHNOLOGIES LEAD</Button></p>
+        <p><Button variant='link' startIcon={<GitHubIcon />} href="https://github.com/justine-pepperell"> JUSTINE PEPPERELL - FRONT END FACILITATOR</Button></p>
+        <p><Button variant='link' startIcon={<GitHubIcon />} href="https://github.com/jessestratford92"> JESSE STRATFORD - DESIGN LEAD </Button></p>
+      </Typography>
+      <Box height='100px'></Box>
+    </Container>
   )
 }
 
