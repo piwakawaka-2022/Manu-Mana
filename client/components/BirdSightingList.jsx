@@ -11,7 +11,7 @@ function BirdSightingsList () {
 
   return (
     <>
-      <Container align='center'>
+      <Container className='zoom' align='center'>
         <Pagination
           data = {birds}
           RenderComponent={BirdSightings}

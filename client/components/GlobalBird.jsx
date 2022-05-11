@@ -8,8 +8,8 @@ function GlobalBird (props) {
     <div className="global-bird">
       <Link to={`/birds/${id}`}>
         <div className='global-bird-link'>
-          <h2>{maori_name}</h2>
-          <h3>{name}</h3>
+          <h2>{maori_name.toUpperCase()}</h2>
+          <h3>{name.toUpperCase()}</h3>
           <img src={photo} height='100px' />
         </div>
       </Link>
