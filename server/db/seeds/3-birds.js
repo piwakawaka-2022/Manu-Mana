@@ -159,7 +159,7 @@ exports.seed = function (knex) {
         },
         {
           id: 16,
-          name: 'Te Ika-a-Māui (North Island) Brown Kiwi',
+          name: 'Kiwi',
           maori_name: 'Te Ika-a-Māui Parauri Kiwi',
           photo: '/birds/brownkiwi.png',
           description:
