@@ -76,8 +76,8 @@ function Map () {
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <FormControl color='primary' variant="filled" fullwidth="true">
-          <Select onChange={handleChange} options = {birdOptions} />
+        <FormControl color='primary' variant="filled">
+          <Select onChange={handleChange} options={birdOptions} placeholder='SELECT MANU' />
         </FormControl>
       </StyledEngineProvider>
       <div className='map-container'>
@@ -110,5 +110,3 @@ function Map () {
 }
 
 export default Map
-
-// Change centering

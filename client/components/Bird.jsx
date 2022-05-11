@@ -22,14 +22,14 @@ function Bird () {
       <br/>
       <Container align='center'>
         <div className='bird-container'>
-          <h1>{birdData[0]?.maori_name}</h1>
-          <h2>{birdData[0]?.name}</h2>
+          <h1>{birdData[0]?.maori_name.toUpperCase()}</h1>
+          <h2>{birdData[0]?.name.toUpperCase()}</h2>
           <img className='bird-profile' src={birdData[0]?.photo} />
           <Box height='50px'></Box>
-          <p>{birdData[0]?.description}</p>
+          <p>{birdData[0]?.description.toUpperCase()}</p>
           <Box height='50px'></Box>
           <h3>KAITIAKI:</h3>
-          <p>{birdData[0]?.meaning}</p>
+          <p>{birdData[0]?.meaning.toUpperCase()}</p>
         </div>
       </Container>
       <div>
