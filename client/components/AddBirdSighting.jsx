@@ -49,9 +49,8 @@ function AddBirdSighting () {
     } else {
       dispatch(addSightingThunk(addEntry))
       setAddLocation('')
-      console.log(addEntry)
-      // setResponseTextPass(`SUCCESSFULLY ADDED ${birdName.toUpperCase()} TO SIGHTINGS`)
-      // closeAdd()
+      setResponseTextPass(`SUCCESSFULLY ADDED ${birdName.toUpperCase()} TO SIGHTINGS`)
+      closeAdd()
     }
   }
 
