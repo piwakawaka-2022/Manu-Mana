@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import { addSightingThunk } from '../actions/birds'
-import { Button, Container, TextField, Box } from '@mui/material'
+import { Button, Container, TextField, Box, FormControl } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import CloseIcon from '@mui/icons-material/Close'
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
@@ -88,7 +88,7 @@ function AddBirdSighting () {
     return (
       <>
         { show ? (
-          !id ? <Select className='register' onChange={handleChange} options = {birdOptions} /> : null
+          !id ? <FormControl color='primary' variant="filled"><Select className='register' onChange={handleChange} options={birdOptions} placeholder='SELECT MANU' /></FormControl> : null
         ) : (
           null) }
         <form onSubmit={handleSubmit}>
