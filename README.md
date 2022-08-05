@@ -49,7 +49,15 @@ Data.govt.nz https://wellingtongardens.nz/assets/Documents/5412aa5a11/J008421-Bo
 ## Bird song 
 Department of Conservation Te Papa Atawhai. (n.d.). Bird Songs and Calls.
 https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
- 
+
+## Known bugs 
+
+
+## Accessibility compliance issues 
+
+
+## Potential security issues 
+
  
 ## Authors 
 ## Catlin Cummings 
